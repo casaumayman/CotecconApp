@@ -22,7 +22,6 @@ class GradientBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return needTopSafeArea
         ? Container(
-            color: Theme.of(context).colorScheme.primaryVariant,
             child: SafeArea(
               child: _buildBackground(context),
             ),

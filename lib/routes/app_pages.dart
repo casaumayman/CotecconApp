@@ -16,14 +16,7 @@ class AppPages {
       binding: SplashBinding(),
     ),
     GetPage(
-      name: Routes.AUTH,
-      page: () => AuthScreen(),
-      binding: AuthBinding(),
-      children: [
-        GetPage(name: Routes.REGISTER, page: () => RegisterScreen()),
-        GetPage(name: Routes.LOGIN, page: () => LoginScreen()),
-      ],
-    ),
+        name: Routes.LOGIN, page: () => LoginScreen(), binding: AuthBinding()),
     GetPage(
         name: Routes.HOME,
         page: () => HomeScreen(),
