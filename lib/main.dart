@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 
 import 'app_binding.dart';
 import 'di.dart';
-import 'lang/lang.dart';
 import 'routes/routes.dart';
 import 'theme/theme.dart';
 
@@ -30,9 +29,6 @@ class App extends StatelessWidget {
       smartManagement: SmartManagement.keepFactory,
       title: 'Job tracking app',
       theme: ThemeConfig.lightTheme,
-      locale: TranslationService.locale,
-      fallbackLocale: TranslationService.fallbackLocale,
-      translations: TranslationService(),
       builder: EasyLoading.init(),
     );
   }

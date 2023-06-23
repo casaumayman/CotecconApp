@@ -9,17 +9,16 @@ class TaskStatusWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String display = _displayText(status);
-    return SizedBox(
-      // height: 20,
-      child: Chip(
-        backgroundColor: Colors.red,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        label: Text(
-          display,
-          style: TextStyle(fontSize: 20, color: Colors.white),
-        ),
+    return Chip(
+      backgroundColor: Colors.red,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      labelPadding: EdgeInsets.zero,
+      label: Text(
+        display,
+        style: TextStyle(fontSize: 12, color: Colors.white),
       ),
     );
   }

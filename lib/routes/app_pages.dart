@@ -1,6 +1,5 @@
 import 'package:flutter_getx_boilerplate/modules/auth/auth.dart';
 import 'package:flutter_getx_boilerplate/modules/home/home.dart';
-import 'package:flutter_getx_boilerplate/modules/me/cards/cards_screen.dart';
 import 'package:flutter_getx_boilerplate/modules/modules.dart';
 import 'package:get/get.dart';
 
@@ -17,12 +16,6 @@ class AppPages {
     ),
     GetPage(
         name: Routes.LOGIN, page: () => LoginScreen(), binding: AuthBinding()),
-    GetPage(
-        name: Routes.HOME,
-        page: () => HomeScreen(),
-        binding: HomeBinding(),
-        children: [
-          GetPage(name: Routes.CARDS, page: () => CardsScreen()),
-        ]),
+    GetPage(name: Routes.HOME, page: () => HomeScreen(), binding: HomeBinding())
   ];
 }

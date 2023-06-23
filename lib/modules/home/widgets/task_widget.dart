@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_boilerplate/models/models.dart';
-import 'package:flutter_getx_boilerplate/modules/home/widgets/info_row.dart';
-import 'package:flutter_getx_boilerplate/modules/home/widgets/status_row.dart';
 import 'package:flutter_getx_boilerplate/shared/shared.dart';
 
 class TaskWidget extends StatelessWidget {
@@ -11,20 +9,62 @@ class TaskWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.all(10),
-      color: Colors.white,
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+        color: hexToColor("#F9FBFC"),
+        borderRadius: BorderRadius.circular(6),
+      ),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(children: [
-          InfoRow(label: "Tên việc", value: task.jobName),
-          InfoRow(label: "Dự án", value: task.projectName),
-          InfoRow(label: "Nhà thầu", value: task.contractor),
-          InfoRow(
-              label: "Ngày bắt đầu", value: MyDateUtils.format(task.startTime)),
-          InfoRow(
-              label: "Ngày kết thúc", value: MyDateUtils.format(task.endTime)),
-          StatusRow(status: task.status),
+        padding: EdgeInsets.all(10),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text(
+            task.jobName,
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+                color: hexToColor("#171A1F")),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            task.projectName,
+            style: TextStyle(color: hexToColor("#9095A0")),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            task.contractor,
+            style: TextStyle(color: hexToColor("#9095A0")),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.calendar_month_outlined,
+                    size: 16,
+                    color: hexToColor("#9095A0"),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    "${MyDateUtils.format(task.startTime)} - ${MyDateUtils.format(task.endTime)}",
+                    style: TextStyle(color: hexToColor("#9095A0")),
+                  )
+                ],
+              ),
+              TaskStatusWidget(status: task.status)
+            ],
+          )
         ]),
       ),
     );
