@@ -8,7 +8,7 @@ class TaskStatusWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String display = _displayText(status);
+    String display = TaskStatusUtils.toStringLabel(status);
     return Chip(
       backgroundColor: Colors.red,
       shape: RoundedRectangleBorder(
@@ -21,16 +21,5 @@ class TaskStatusWidget extends StatelessWidget {
         style: TextStyle(fontSize: 12, color: Colors.white),
       ),
     );
-  }
-
-  String _displayText(TaskStatus status) {
-    switch (status) {
-      case TaskStatus.doing:
-        return "Đang thực hiện";
-      case TaskStatus.done:
-        return "Đã xong";
-      case TaskStatus.wait_approve:
-        return "Chờ duyệt";
-    }
   }
 }

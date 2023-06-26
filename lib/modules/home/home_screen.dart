@@ -35,7 +35,12 @@ class HomeScreen extends GetView<HomeController> {
               child: ListView(
                 padding: EdgeInsets.zero,
                 children: controller.taskList
-                    .map((task) => TaskWidget(task: task))
+                    .map((task) => TaskWidget(
+                          task: task,
+                          onTap: () {
+                            Get.toNamed(Routes.TASK_DETAIL, arguments: task);
+                          },
+                        ))
                     .toList(),
               ),
             ),

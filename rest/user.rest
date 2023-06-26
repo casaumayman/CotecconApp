@@ -1,6 +1,6 @@
 @port = 8080
-@host = localhost:{{port}}
-@token = Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhc3Npc3RhbnQtcHVibGljLWFwaSIsImV4cCI6IjIwMjMtMDYtMjdUMjM6MjQ6MDAuNzM2NjA3MTErMDc6MDAiLCJ1c2VyX2lkIjoyfQ.5Cey2DEPwTVDivVuzVvnJGYFJdQFZxKHcetLXOULhRI
+@host = coteccons.info
+@token = Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhc3Npc3RhbnQtcHVibGljLWFwaSIsImV4cCI6IjIwMjMtMDYtMjhUMDQ6MTI6NTUuMzk3OTk3MzU5KzA3OjAwIiwidXNlcl9pZCI6Mn0.KFJFpnRG6DCx28-qO0szGOSZGi7yLmalu06U8aayK78
 @user = users
 
 

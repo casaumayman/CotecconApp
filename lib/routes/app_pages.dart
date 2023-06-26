@@ -2,6 +2,7 @@ import 'package:flutter_getx_boilerplate/modules/add_task/add_task.dart';
 import 'package:flutter_getx_boilerplate/modules/auth/auth.dart';
 import 'package:flutter_getx_boilerplate/modules/home/home.dart';
 import 'package:flutter_getx_boilerplate/modules/modules.dart';
+import 'package:flutter_getx_boilerplate/modules/task_detail/task_detail.dart';
 import 'package:get/get.dart';
 
 part 'app_routes.dart';
@@ -23,5 +24,9 @@ class AppPages {
         name: Routes.ADD_TASK,
         page: () => AddTaskScreen(),
         binding: AddTaskBinding()),
+    GetPage(
+        name: Routes.TASK_DETAIL,
+        page: () => TaskDetailScreen(),
+        binding: TaskDetailBinding()),
   ];
 }
