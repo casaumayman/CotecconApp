@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx_boilerplate/modules/home/home.dart';
 import 'package:flutter_getx_boilerplate/modules/home/widgets/add_task_button.dart';
 import 'package:flutter_getx_boilerplate/modules/home/widgets/task_widget.dart';
+import 'package:flutter_getx_boilerplate/routes/app_pages.dart';
 import 'package:flutter_getx_boilerplate/shared/shared.dart';
 
 import 'package:get/get.dart';
@@ -20,7 +21,9 @@ class HomeScreen extends GetView<HomeController> {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             AddTaskButton(
-              onPress: () {},
+              onPress: () {
+                Get.toNamed(Routes.ADD_TASK);
+              },
             ),
           ],
         ),

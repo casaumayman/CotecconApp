@@ -78,10 +78,22 @@ class AppBarTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (title != null) {
-      return Text(
-        title!,
-        style: TextStyle(
-            fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          IconButton(
+              onPressed: () {
+                Get.back();
+              },
+              icon: Icon(Icons.arrow_back),
+              padding: EdgeInsets.zero),
+          Text(
+            title!,
+            style: TextStyle(
+                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+          )
+        ],
       );
     }
     return Image.asset("assets/images/logo-white.png", height: 50);

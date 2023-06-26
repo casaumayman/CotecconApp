@@ -1,3 +1,4 @@
+import 'package:flutter_getx_boilerplate/modules/add_task/add_task.dart';
 import 'package:flutter_getx_boilerplate/modules/auth/auth.dart';
 import 'package:flutter_getx_boilerplate/modules/home/home.dart';
 import 'package:flutter_getx_boilerplate/modules/modules.dart';
@@ -16,6 +17,11 @@ class AppPages {
     ),
     GetPage(
         name: Routes.LOGIN, page: () => LoginScreen(), binding: AuthBinding()),
-    GetPage(name: Routes.HOME, page: () => HomeScreen(), binding: HomeBinding())
+    GetPage(
+        name: Routes.HOME, page: () => HomeScreen(), binding: HomeBinding()),
+    GetPage(
+        name: Routes.ADD_TASK,
+        page: () => AddTaskScreen(),
+        binding: AddTaskBinding()),
   ];
 }
