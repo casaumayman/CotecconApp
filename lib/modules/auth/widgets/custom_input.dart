@@ -44,6 +44,7 @@ class _CustomInputState extends State<CustomInput> {
       border: InputBorder.none,
       filled: true,
       fillColor: hexToColor("#F3F4F6"),
+      hintStyle: TextStyle(color: hexToColor("#BCC1CA")),
       prefixIconColor: Colors.black,
       suffixIconColor: Colors.black,
       floatingLabelBehavior: FloatingLabelBehavior.always,

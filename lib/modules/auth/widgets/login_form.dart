@@ -19,7 +19,7 @@ class LoginForm extends GetView<AuthController> {
                   controller: controller.loginUsernameController,
                   label: "Tên đăng nhập",
                   icon: Icon(Icons.account_circle_outlined),
-                  placeHolder: "Vui lòng nhập username"),
+                  placeHolder: "Nhập username"),
               SizedBox(
                 height: 10,
               ),
@@ -27,7 +27,7 @@ class LoginForm extends GetView<AuthController> {
                 controller: controller.loginPasswordController,
                 label: "Mật khẩu",
                 icon: Icon(Icons.lock_outline),
-                placeHolder: "Vui lòng nhập mật khẩu",
+                placeHolder: "Nhập mật khẩu",
                 isPassword: true,
               ),
               SizedBox(

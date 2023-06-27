@@ -42,8 +42,8 @@ class CommonWidget {
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: 3,
-        backgroundColor: Colors.white,
-        textColor: Colors.black,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
         fontSize: 16.0);
   }
 }

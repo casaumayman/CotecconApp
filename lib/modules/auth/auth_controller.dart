@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_boilerplate/api/api.dart';
+import 'package:flutter_getx_boilerplate/models/models.dart';
 import 'package:flutter_getx_boilerplate/routes/app_pages.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthController extends GetxController {
-  final ApiRepository apiRepository;
-  AuthController({required this.apiRepository});
+  final AuthRepository authRepository;
+  AuthController({required this.authRepository});
 
   final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   final loginUsernameController = TextEditingController();
@@ -25,9 +25,16 @@ class AuthController extends GetxController {
 
   void login(BuildContext context) async {
     if (loginFormKey.currentState!.validate()) {
-      final prefs = Get.find<SharedPreferences>();
-      prefs.setString(StorageConstants.token, "token");
-      Get.offNamed(Routes.HOME);
+      try {
+        final res = await authRepository.login(LoginRequest(
+            username: loginUsernameController.text,
+            password: loginPasswordController.text));
+        if (res?.token != null) {
+          final prefs = Get.find<SharedPreferences>();
+          prefs.setString("token", res!.token);
+          Get.toNamed(Routes.HOME);
+        }
+      } catch (e) {}
     }
   }
 
