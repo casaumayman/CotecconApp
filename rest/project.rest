@@ -1,6 +1,6 @@
 @port = 8080
 @host = coteccons.info
-@token = Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhc3Npc3RhbnQtcHVibGljLWFwaSIsImV4cCI6IjIwMjMtMDYtMjdUMjM6MjQ6MDAuNzM2NjA3MTErMDc6MDAiLCJ1c2VyX2lkIjoyfQ.5Cey2DEPwTVDivVuzVvnJGYFJdQFZxKHcetLXOULhRI
+@token = Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhc3Npc3RhbnQtcHVibGljLWFwaSIsImV4cCI6IjIwMjMtMDYtMzBUMDI6MDk6NTAuMzcyMjY1NzQ2KzA3OjAwIiwidXNlcl9pZCI6Mn0.2k8rOBn6b8oNfhyyZgrqCZ7B63S8CnurSZA7zB05KOk
 @project = projects
 
 
@@ -23,7 +23,7 @@ POST http://{{host}}/api/v1/{{project}} HTTP/1.1
 Content-Type: application/json
 {{token}}
 
-{"name":"Paname Beach","code":"CTC001", "address":"123 Binh Duong","start_date":"2006-01-02","end_date":"2012-05-02"}
+{"name":"Tuan House","code":"CTTUAN", "address":"123 Ho Chi Minh","start_date":"2006-01-02","end_date":"2024-05-02"}
 
 ############
 # PROJECTS #
@@ -34,14 +34,14 @@ PUT http://{{host}}/api/v1/{{project}}/12 HTTP/1.1
 Content-Type: application/json
 {{token}}
 
-{"id":1,"name":"Panama Beach","code":"CTC001 - Updated", "address":"123 Binh Duong - Updated","start_date":"2008-01-02","end_date":"2014-05-02"}
+{"name":"Panama Beach","code":"CTC001 - Updated", "address":"123 Binh Duong - Updated","start_date":"2008-01-02","end_date":"2014-05-02"}
 
 ###########
 # PROJECTS #
 ###########
 
 # Read
-GET http://{{host}}/api/v1/{{project}}/10 HTTP/1.1
+GET http://{{host}}/api/v1/{{project}}/13 HTTP/1.1
 {{token}}
 ###
 

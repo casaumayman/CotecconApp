@@ -31,21 +31,23 @@ class HomeScreen extends GetView<HomeController> {
           child: SafeArea(
             top: false,
             child: RefreshIndicator(
-              onRefresh: () async {},
-              child: ListView(
-                padding: EdgeInsets.zero,
-                children: controller.taskList
-                    .map((task) => TaskWidget(
-                          task: task,
-                          onTap: () {
-                            Get.toNamed(Routes.TASK_DETAIL, arguments: task);
-                          },
-                        ))
-                    .toList(),
-              ),
-            ),
+                onRefresh: () async {},
+                child: Obx(() {
+                  return ListView(
+                    padding: EdgeInsets.zero,
+                    children: controller.tasks
+                        .map((task) => TaskWidget(
+                              task: task,
+                              onTap: () {
+                                Get.toNamed(Routes.TASK_DETAIL,
+                                    arguments: task);
+                              },
+                            ))
+                        .toList(),
+                  );
+                })),
           ),
-        )
+        ),
       ]),
     );
   }

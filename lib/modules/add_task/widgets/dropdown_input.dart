@@ -39,9 +39,9 @@ class DropDownInput extends StatelessWidget {
               border: Border.all(width: 1, color: hexToColor("#9095A0"))),
           child: DropdownButtonFormField<String>(
             decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(horizontal: 5),
+              contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               border: InputBorder.none,
-              isCollapsed: true,
+              isDense: true,
             ),
             value: value,
             items: items

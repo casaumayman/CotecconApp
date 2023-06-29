@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_boilerplate/models/models.dart';
 import 'package:flutter_getx_boilerplate/shared/shared.dart';
 
 class TaskStatusWidget extends StatelessWidget {

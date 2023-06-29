@@ -11,22 +11,25 @@ class BaseAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+        bottom: false,
+        left: false,
+        right: false,
         child: Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          AppBarTitle(
-            title: title,
+          padding: const EdgeInsets.all(10.0),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              AppBarTitle(
+                title: title,
+              ),
+              AppBarAction(
+                title: title,
+              )
+            ],
           ),
-          AppBarAction(
-            title: title,
-          )
-        ],
-      ),
-    ));
+        ));
   }
 }
 

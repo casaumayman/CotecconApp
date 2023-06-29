@@ -9,6 +9,7 @@ class CommentWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double fontSize = 14;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -16,18 +17,18 @@ class CommentWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              comment.userName,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              "Unknow sender",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize),
             ),
             Text(
-              MyDateUtils.format(comment.createdDate),
-              style: TextStyle(fontSize: 16),
+              MyDateUtils.format(comment.time!, format: "HH:mm dd/MM/yyyy"),
+              style: TextStyle(fontSize: fontSize),
             )
           ],
         ),
         Text(
-          comment.message,
-          style: TextStyle(fontSize: 16),
+          comment.msg ?? '',
+          style: TextStyle(fontSize: fontSize),
         )
       ],
     );

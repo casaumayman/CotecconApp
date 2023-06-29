@@ -1,21 +1,22 @@
+import 'package:flutter_getx_boilerplate/api/api.dart';
 import 'package:flutter_getx_boilerplate/models/models.dart';
 import 'package:flutter_getx_boilerplate/routes/app_pages.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeController extends GetxController {
-  var storage = Get.find<SharedPreferences>();
-  List<Task> taskList = [];
+  final storage = Get.find<SharedPreferences>();
+  final taskRepository = Get.find<TaskRepository>();
+  final tasks = RxList<Task>();
 
   @override
-  void onInit() {
-    var timeNow = DateTime.now();
-    for (var i = 0; i < 10; i++) {
-      taskList.add(Task("Project alpha", "Contructor name", "Job $i", timeNow,
-          timeNow.add(Duration(days: 3)), TaskStatus.wait_approve));
-    }
-    super.onInit();
+  void onReady() {
+    taskRepository.getList().then((taskList) {
+      if (taskList != null) {
+        tasks.addAll(taskList);
+      }
+    });
+    super.onReady();
   }
 
   void logout() {

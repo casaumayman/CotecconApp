@@ -1,7 +1,9 @@
+import 'package:intl/intl.dart';
+
 class MyDateUtils {
-  static String format(DateTime dateTime) {
-    String formattedDate =
-        '${dateTime.day.toString().padLeft(2, '0')}-${dateTime.month.toString().padLeft(2, '0')}-${dateTime.year.toString()}';
+  static String format(DateTime dateTime, {String? format = "dd-MM-yyyy"}) {
+    DateFormat formatter = DateFormat(format);
+    String formattedDate = formatter.format(dateTime);
     return formattedDate;
   }
 }

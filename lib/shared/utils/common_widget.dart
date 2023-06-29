@@ -36,13 +36,24 @@ class CommonWidget {
     return SizedBox(width: width);
   }
 
-  static void toast(String error) async {
+  static void toastError(String error) async {
     await Fluttertoast.showToast(
         msg: error,
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: 3,
         backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0);
+  }
+
+  static void toastSuccess(String error) async {
+    await Fluttertoast.showToast(
+        msg: error,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 3,
+        backgroundColor: Colors.green,
         textColor: Colors.white,
         fontSize: 16.0);
   }

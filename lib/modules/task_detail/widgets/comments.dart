@@ -15,7 +15,7 @@ class Comments extends StatelessWidget {
       runSpacing: 5,
       children: [
         Container(
-          margin: EdgeInsets.only(top: 10),
+          margin: EdgeInsets.only(top: 20),
           child: Text(
             "Bình Luận",
             style: TextStyle(fontWeight: FontWeight.bold),

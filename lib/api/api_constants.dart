@@ -1,3 +1,4 @@
 class ApiConstants {
-  static const baseUrl = 'http://coteccons.info';
+  static const host = "https://coteccons.info";
+  static const baseUrl = '$host/api/v1';
 }

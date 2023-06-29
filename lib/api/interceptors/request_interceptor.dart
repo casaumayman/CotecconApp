@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_getx_boilerplate/api/api_constants.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -12,7 +13,9 @@ void requestInterceptor(
   if (token != null && token.isNotEmpty) {
     options.headers.addAll({'Authorization': 'Bearer $token'});
   }
-
+  if (options.path == '/auth') {
+    options.baseUrl = ApiConstants.host;
+  }
   EasyLoading.show(status: 'loading...');
   requestlLogger(options);
   return handler.next(options);
@@ -20,4 +23,5 @@ void requestInterceptor(
 
 void requestlLogger(RequestOptions request) {
   debugPrint('Url: ${request.method} ${request.path}');
+  debugPrint('Body: ${request.data}');
 }

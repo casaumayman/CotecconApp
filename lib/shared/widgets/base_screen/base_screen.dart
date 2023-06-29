@@ -4,15 +4,18 @@ import 'package:flutter_getx_boilerplate/shared/shared.dart';
 import 'package:flutter_getx_boilerplate/shared/widgets/base_screen/base_app_bar.dart';
 
 class BaseScreen extends StatelessWidget {
-  const BaseScreen({super.key, this.title, this.child});
+  const BaseScreen(
+      {super.key, this.title, this.child, this.resizeToAvoidBottomInset});
 
   final String? title;
   final Widget? child;
+  final bool? resizeToAvoidBottomInset;
 
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     return Scaffold(
+      resizeToAvoidBottomInset: resizeToAvoidBottomInset,
       body: Stack(
         children: [
           Container(

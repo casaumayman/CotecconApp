@@ -7,5 +7,8 @@ class AppBinding extends Bindings {
   void dependencies() async {
     Get.put(BaseProvider().dio, permanent: true);
     Get.put(AuthRepository(), permanent: true);
+    Get.put(TaskRepository(), permanent: true);
+    Get.put(ProjectRepository(), permanent: true);
+    Get.put(ExecutorRepository(), permanent: true);
   }
 }

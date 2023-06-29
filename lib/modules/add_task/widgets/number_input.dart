@@ -27,6 +27,7 @@ class NumberInput extends StatelessWidget {
               borderRadius: BorderRadius.circular(4),
               border: Border.all(width: 1, color: hexToColor("#9095A0"))),
           child: TextFormField(
+            controller: controller,
             decoration: InputDecoration(
               contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               border: InputBorder.none,

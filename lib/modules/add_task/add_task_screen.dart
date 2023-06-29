@@ -13,84 +13,92 @@ class AddTaskScreen extends GetView<AddTaskController> {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
+      resizeToAvoidBottomInset: true,
       title: "Thêm công việc",
-      child: Column(
-        children: [
-          DropDownInput(
-            items: [],
-            label: "Dự án",
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          DropDownInput(
-            items: [],
-            label: "Nhà thầu",
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          TextInput(
-            label: "Tên công việc",
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          NumberInput(
-            label: "Số lượng",
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          NumberInput(
-            label: "Đơn giá",
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              Expanded(child: DateInput(label: "Ngày bắt đầu")),
-              SizedBox(
-                width: 10,
-              ),
-              Expanded(child: DateInput(label: "Ngày kết thúc")),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          DropDownInput(
-            items: [],
-            label: "Trạng thái",
-          ),
-          Spacer(),
-          SafeArea(
-              child: Row(
-            children: [
-              Expanded(
-                  child: OutlinedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.white),
-                  elevation: MaterialStateProperty.all(0),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Obx(() => DropDownInput(
+                  items: controller.projects
+                      .map((p) =>
+                          DropdownItem(p.name ?? '', (p.id ?? 0).toString()))
+                      .toList(),
+                  label: "Dự án",
+                  onChange: (id) {
+                    controller.projectId = int.parse(id);
+                  },
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            Obx(() => DropDownInput(
+                  items: controller.executors
+                      .map((e) =>
+                          DropdownItem(e.name ?? '', (e.id ?? 0).toString()))
+                      .toList(),
+                  label: "Nhà thầu",
+                  onChange: (id) {
+                    controller.executorId = int.parse(id);
+                  },
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            TextInput(
+              label: "Tên công việc",
+              controller: controller.taskNameController,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            NumberInput(
+              label: "Số lượng",
+              controller: controller.quantityController,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            NumberInput(
+              label: "Đơn giá",
+              controller: controller.priceController,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Expanded(
+                    child: DateInput(
+                  label: "Ngày bắt đầu",
+                  controller: controller.startTimeController,
+                  onChange: (date) {
+                    controller.startTime = date;
+                  },
+                )),
+                SizedBox(
+                  width: 10,
                 ),
-                child: Text(
-                  "Huỷ",
-                  style: TextStyle(color: Colors.black),
-                ),
-                onPressed: () {},
-              )),
-              SizedBox(
-                width: 10,
-              ),
-              Expanded(
-                  child: ElevatedButton(
-                child: Text("Tạo công việc"),
-                onPressed: () {},
-              )),
-            ],
-          ))
-        ],
+                Expanded(
+                    child: DateInput(
+                  label: "Ngày kết thúc",
+                  controller: controller.endTimeController,
+                  onChange: (date) {
+                    controller.endTime = date;
+                  },
+                )),
+              ],
+            ),
+            // Spacer(),
+            SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              child: Text("Tạo công việc"),
+              onPressed: controller.createTask,
+            )
+          ],
+        ),
       ),
     );
   }

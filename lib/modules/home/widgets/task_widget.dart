@@ -23,7 +23,7 @@ class TaskWidget extends StatelessWidget {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(
-              task.jobName,
+              task.name ?? '',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 17,
@@ -33,14 +33,14 @@ class TaskWidget extends StatelessWidget {
               height: 5,
             ),
             Text(
-              task.projectName,
+              task.project?.name ?? '',
               style: TextStyle(color: hexToColor("#9095A0")),
             ),
             SizedBox(
               height: 5,
             ),
             Text(
-              task.contractor,
+              task.executorName ?? '',
               style: TextStyle(color: hexToColor("#9095A0")),
             ),
             SizedBox(
@@ -61,12 +61,12 @@ class TaskWidget extends StatelessWidget {
                       width: 5,
                     ),
                     Text(
-                      "${MyDateUtils.format(task.startTime)} - ${MyDateUtils.format(task.endTime)}",
+                      "${task.startTime} - ${task.endTime}",
                       style: TextStyle(color: hexToColor("#9095A0")),
                     )
                   ],
                 ),
-                TaskStatusWidget(status: task.status)
+                // TaskStatusWidget(status: task.status)
               ],
             )
           ]),

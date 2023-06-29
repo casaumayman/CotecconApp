@@ -1,16 +1,34 @@
-import 'package:flutter_getx_boilerplate/shared/constants/enums.dart';
+import 'package:flutter_getx_boilerplate/models/models.dart';
 
 class TaskStatusUtils {
-  static String toStringLabel(TaskStatus status) {
+  static String toStringLabel(TaskStatus? status) {
     switch (status) {
-      case TaskStatus.doing:
-        return "Đang thực hiện";
-      case TaskStatus.done:
-        return "Đã xong";
-      case TaskStatus.wait_approve:
-        return "Chờ duyệt";
+      case TaskStatus.REQUESTED:
+        return "Đã yêu cầu";
+      case TaskStatus.ACCEPTED:
+        return "Đã chấp nhận";
+      case TaskStatus.CANCELED:
+        return "Đã huỷ";
+      case TaskStatus.COMPLETED:
+        return "Đã hoàn thành";
+      case TaskStatus.REJECTED:
+        return "Đã từ chối";
+      case TaskStatus.CREATED:
+        return "Đã tạo";
       default:
-        return "Unknown";
+        return "";
     }
+  }
+
+  static String toStringJson(TaskStatus status) {
+    const taskStatusEnumMap = {
+      TaskStatus.REQUESTED: 'requested',
+      TaskStatus.ACCEPTED: 'accepted',
+      TaskStatus.REJECTED: 'rejected',
+      TaskStatus.CANCELED: 'cancel',
+      TaskStatus.COMPLETED: 'completed',
+      TaskStatus.CREATED: 'created',
+    };
+    return taskStatusEnumMap[status] ?? '';
   }
 }
