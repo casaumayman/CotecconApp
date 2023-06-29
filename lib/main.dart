@@ -27,7 +27,7 @@ class App extends StatelessWidget {
       getPages: AppPages.routes,
       initialBinding: AppBinding(),
       smartManagement: SmartManagement.keepFactory,
-      title: 'Job tracking app',
+      title: 'Coteccons',
       theme: ThemeConfig.lightTheme,
       builder: EasyLoading.init(),
     );
