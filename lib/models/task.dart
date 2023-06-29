@@ -1,4 +1,4 @@
-import 'package:flutter_getx_boilerplate/models/models.dart';
+import 'package:coteccons_app/models/models.dart';
 
 class Task {
   int? id;

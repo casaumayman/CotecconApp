@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/models/comment.dart';
-import 'package:flutter_getx_boilerplate/shared/utils/utils.dart';
+import 'package:coteccons_app/models/comment.dart';
+import 'package:coteccons_app/shared/utils/utils.dart';
 
 class CommentWidget extends StatelessWidget {
   const CommentWidget({super.key, required this.comment});

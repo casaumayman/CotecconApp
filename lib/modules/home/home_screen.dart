@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/modules/home/home.dart';
-import 'package:flutter_getx_boilerplate/modules/home/widgets/add_task_button.dart';
-import 'package:flutter_getx_boilerplate/modules/home/widgets/task_widget.dart';
-import 'package:flutter_getx_boilerplate/routes/app_pages.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
+import 'package:coteccons_app/modules/home/home.dart';
+import 'package:coteccons_app/modules/home/widgets/add_task_button.dart';
+import 'package:coteccons_app/modules/home/widgets/task_widget.dart';
+import 'package:coteccons_app/routes/app_pages.dart';
+import 'package:coteccons_app/shared/shared.dart';
 
 import 'package:get/get.dart';
 

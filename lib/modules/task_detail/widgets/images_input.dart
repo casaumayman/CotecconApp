@@ -1,5 +1,8 @@
+import 'package:coteccons_app/routes/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/modules/task_detail/widgets/image_input.dart';
+import 'package:coteccons_app/modules/task_detail/widgets/image_input.dart';
+import 'package:coteccons_app/models/models.dart' as Model;
+import 'package:get/get.dart';
 
 class ImagesInput extends StatelessWidget {
   const ImagesInput(
@@ -8,13 +11,13 @@ class ImagesInput extends StatelessWidget {
       this.disabled = false,
       required this.label});
 
-  final List<String> images;
+  final List<Model.ImageInfo> images;
   final bool disabled;
   final String label;
 
   @override
   Widget build(BuildContext context) {
-    List<String?> renderImages = List.of(images);
+    List<Model.ImageInfo?> renderImages = List.of(images);
     if (!disabled) {
       renderImages.add(null);
     }
@@ -32,13 +35,18 @@ class ImagesInput extends StatelessWidget {
           direction: Axis.horizontal,
           spacing: 10,
           runSpacing: 10,
-          children: renderImages.map((url) {
-            if (url != null) {
-              return Image.network(
-                url,
-                fit: BoxFit.cover,
-                width: 100,
-                height: 100,
+          children: renderImages.map((imageInfo) {
+            if (imageInfo != null) {
+              return InkWell(
+                onTap: () {
+                  Get.toNamed(Routes.IMAGE_VIEW, arguments: imageInfo.fullFile);
+                },
+                child: Image.network(
+                  imageInfo.thumbnail!,
+                  fit: BoxFit.cover,
+                  width: 100,
+                  height: 100,
+                ),
               );
             }
             return ImageInput();

@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_getx_boilerplate/routes/routes.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
+import 'package:coteccons_app/routes/routes.dart';
+import 'package:coteccons_app/shared/shared.dart';
 import 'package:get/get.dart' as GetInstance;
 import 'package:shared_preferences/shared_preferences.dart';
 

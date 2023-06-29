@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/models/task_detail.dart';
-import 'package:flutter_getx_boilerplate/modules/task_detail/task_detail_controller.dart';
-import 'package:flutter_getx_boilerplate/modules/task_detail/widgets/comments.dart';
-import 'package:flutter_getx_boilerplate/modules/task_detail/widgets/images_input.dart';
-import 'package:flutter_getx_boilerplate/modules/task_detail/widgets/info_rows.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
+import 'package:coteccons_app/models/task_detail.dart';
+import 'package:coteccons_app/modules/task_detail/task_detail_controller.dart';
+import 'package:coteccons_app/modules/task_detail/widgets/comments.dart';
+import 'package:coteccons_app/modules/task_detail/widgets/images_input.dart';
+import 'package:coteccons_app/modules/task_detail/widgets/info_rows.dart';
+import 'package:coteccons_app/shared/shared.dart';
 import 'package:get/get.dart';
 
 class TaskDetailScreen extends GetView<TaskDetailController> {
@@ -20,17 +20,12 @@ class TaskDetailScreen extends GetView<TaskDetailController> {
           children: [
             Obx(() => InfoRows(task: controller.taskDetail.value)),
             Obx(() {
-              final listImg = (controller.taskDetail.value?.ownerImages
-                      ?.map((image) => image.thumbnail ?? '')
-                      .toList() ??
-                  []);
+              final listImg = (controller.taskDetail.value?.ownerImages ?? []);
               return ImagesInput(label: "Ảnh từ CTC", images: listImg);
             }),
             Obx(() {
-              final listImg = (controller.taskDetail.value?.executorImages
-                      ?.map((image) => image.thumbnail ?? '')
-                      .toList() ??
-                  []);
+              final listImg =
+                  (controller.taskDetail.value?.executorImages ?? []);
               return ImagesInput(
                 label: "Ảnh từ constructor",
                 images: listImg,

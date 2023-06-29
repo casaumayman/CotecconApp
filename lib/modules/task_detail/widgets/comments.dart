@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/models/comment.dart';
-import 'package:flutter_getx_boilerplate/modules/task_detail/widgets/comment.dart';
-import 'package:flutter_getx_boilerplate/modules/task_detail/widgets/comment_input.dart';
+import 'package:coteccons_app/models/comment.dart';
+import 'package:coteccons_app/modules/task_detail/widgets/comment.dart';
+import 'package:coteccons_app/modules/task_detail/widgets/comment_input.dart';
 
 class Comments extends StatelessWidget {
   const Comments({super.key, required this.commemts});

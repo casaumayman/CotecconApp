@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/models/models.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
+import 'package:coteccons_app/models/models.dart';
+import 'package:coteccons_app/shared/shared.dart';
 
 class TaskWidget extends StatelessWidget {
   const TaskWidget({super.key, required this.task, required this.onTap});

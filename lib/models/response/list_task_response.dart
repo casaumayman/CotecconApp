@@ -1,4 +1,4 @@
-import 'package:flutter_getx_boilerplate/models/task.dart';
+import 'package:coteccons_app/models/task.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'list_task_response.g.dart';

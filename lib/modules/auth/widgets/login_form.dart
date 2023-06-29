@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/modules/auth/auth.dart';
-import 'package:flutter_getx_boilerplate/modules/auth/widgets/custom_input.dart';
+import 'package:coteccons_app/modules/auth/auth.dart';
+import 'package:coteccons_app/modules/auth/widgets/custom_input.dart';
 import 'package:get/get.dart';
 
 class LoginForm extends GetView<AuthController> {

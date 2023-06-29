@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
+import 'package:coteccons_app/shared/shared.dart';
 
 class TextInput extends StatelessWidget {
   const TextInput(

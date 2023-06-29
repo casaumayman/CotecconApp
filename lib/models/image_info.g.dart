@@ -10,12 +10,12 @@ ImageInfo _$ImageInfoFromJson(Map<String, dynamic> json) => ImageInfo(
       id: json['id'] as int?,
       name: json['name'] as String?,
       thumbnail: json['thumbnail'] as String?,
-      fullFile: json['fullFile'] as String?,
+      fullFile: json['full_file'] as String?,
     );
 
 Map<String, dynamic> _$ImageInfoToJson(ImageInfo instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'thumbnail': instance.thumbnail,
-      'fullFile': instance.fullFile,
+      'full_file': instance.fullFile,
     };

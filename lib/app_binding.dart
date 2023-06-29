@@ -1,5 +1,5 @@
-import 'package:flutter_getx_boilerplate/api/api.dart';
-import 'package:flutter_getx_boilerplate/api/base_provider.dart';
+import 'package:coteccons_app/api/api.dart';
+import 'package:coteccons_app/api/base_provider.dart';
 import 'package:get/get.dart';
 
 class AppBinding extends Bindings {

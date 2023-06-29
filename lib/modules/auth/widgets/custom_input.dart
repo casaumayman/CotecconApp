@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/shared/constants/colors.dart';
+import 'package:coteccons_app/shared/constants/colors.dart';
 
 class CustomInput extends StatefulWidget {
   const CustomInput(

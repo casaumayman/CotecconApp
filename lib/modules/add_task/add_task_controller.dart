@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/api/api.dart';
-import 'package:flutter_getx_boilerplate/models/models.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
+import 'package:coteccons_app/api/api.dart';
+import 'package:coteccons_app/models/models.dart';
+import 'package:coteccons_app/shared/shared.dart';
 import 'package:get/get.dart';
 
 class AddTaskController extends GetxController {

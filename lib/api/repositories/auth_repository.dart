@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_getx_boilerplate/models/models.dart';
+import 'package:coteccons_app/models/models.dart';
 import 'package:get/get.dart';
 
 class AuthRepository {

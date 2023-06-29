@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/modules/auth/widgets/login_form.dart';
+import 'package:coteccons_app/modules/auth/widgets/login_form.dart';
 import 'package:get/get.dart';
 
 import 'auth_controller.dart';

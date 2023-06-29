@@ -1,4 +1,4 @@
-import 'package:flutter_getx_boilerplate/models/models.dart';
+import 'package:coteccons_app/models/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'task_detail.g.dart';

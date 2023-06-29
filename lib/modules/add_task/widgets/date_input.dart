@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/shared/constants/colors.dart';
-import 'package:flutter_getx_boilerplate/shared/utils/utils.dart';
+import 'package:coteccons_app/shared/constants/colors.dart';
+import 'package:coteccons_app/shared/utils/utils.dart';
 
 class DateInput extends StatelessWidget {
   const DateInput(

@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'image_info.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class ImageInfo {
   int? id;
   String? name;

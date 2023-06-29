@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
-import 'package:flutter_getx_boilerplate/shared/widgets/base_screen/base_app_bar.dart';
+import 'package:coteccons_app/shared/shared.dart';
+import 'package:coteccons_app/shared/widgets/base_screen/base_app_bar.dart';
 
 class BaseScreen extends StatelessWidget {
   const BaseScreen(

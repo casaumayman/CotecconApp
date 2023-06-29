@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_boilerplate/models/models.dart';
-import 'package:flutter_getx_boilerplate/modules/task_detail/widgets/info_row.dart';
-import 'package:flutter_getx_boilerplate/shared/shared.dart';
+import 'package:coteccons_app/models/models.dart';
+import 'package:coteccons_app/modules/task_detail/widgets/info_row.dart';
+import 'package:coteccons_app/shared/shared.dart';
 
 class InfoRows extends StatelessWidget {
   const InfoRows({super.key, required this.task});
