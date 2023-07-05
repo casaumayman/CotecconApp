@@ -17,7 +17,7 @@ class CommentWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Unknow sender",
+              comment.creator.name ?? '',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize),
             ),
             Text(

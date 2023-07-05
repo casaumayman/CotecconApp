@@ -9,15 +9,15 @@ class InfoRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-        children: [
-          Expanded(
-              flex: 3,
-              child: Text(
-                label + ":",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              )),
-          Expanded(flex: 7, child: Text(value))
-        ],
-      );
+      children: [
+        Expanded(
+            flex: 4,
+            child: Text(
+              label + ":",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            )),
+        Expanded(flex: 6, child: Text(value))
+      ],
+    );
   }
 }

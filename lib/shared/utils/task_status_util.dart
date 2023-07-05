@@ -15,6 +15,8 @@ class TaskStatusUtils {
         return "Đã từ chối";
       case TaskStatus.CREATED:
         return "Đã tạo";
+      case TaskStatus.IMPLEMENTING:
+        return "Đang thực hiện";
       default:
         return "";
     }
@@ -28,6 +30,7 @@ class TaskStatusUtils {
       TaskStatus.CANCELED: 'cancel',
       TaskStatus.COMPLETED: 'completed',
       TaskStatus.CREATED: 'created',
+      TaskStatus.IMPLEMENTING: 'implementing',
     };
     return taskStatusEnumMap[status] ?? '';
   }

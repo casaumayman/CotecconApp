@@ -24,7 +24,7 @@ TaskDetail _$TaskDetailFromJson(Map<String, dynamic> json) => TaskDetail(
           ?.map((e) => ImageInfo.fromJson(e as Map<String, dynamic>))
           .toList(),
       json['price'] as int?,
-      json['priority_level'] as int?,
+      $enumDecodeNullable(_$TaskPriorityEnumMap, json['priority_level']),
       json['project'] == null
           ? null
           : Project.fromJson(json['project'] as Map<String, dynamic>),
@@ -33,6 +33,7 @@ TaskDetail _$TaskDetailFromJson(Map<String, dynamic> json) => TaskDetail(
       json['quantity'] as int?,
       json['start_time'] as String?,
       $enumDecode(_$TaskStatusEnumMap, json['status']),
+      json['unit'] as String?,
     );
 
 Map<String, dynamic> _$TaskDetailToJson(TaskDetail instance) =>
@@ -51,11 +52,19 @@ Map<String, dynamic> _$TaskDetailToJson(TaskDetail instance) =>
       'quantity': instance.quantity,
       'price': instance.price,
       'description': instance.description,
-      'priority_level': instance.priorityLevel,
+      'priority_level': _$TaskPriorityEnumMap[instance.priorityLevel],
       'status': _$TaskStatusEnumMap[instance.status]!,
       'owner_images': instance.ownerImages,
       'executor_images': instance.executorImages,
+      'unit': instance.unit,
     };
+
+const _$TaskPriorityEnumMap = {
+  TaskPriority.HIGHT: 'high',
+  TaskPriority.NORMAL: 'normal',
+  TaskPriority.LOW: 'low',
+  TaskPriority.UNKNOWN: 'unknown',
+};
 
 const _$TaskStatusEnumMap = {
   TaskStatus.REQUESTED: 'requested',
@@ -64,4 +73,5 @@ const _$TaskStatusEnumMap = {
   TaskStatus.CANCELED: 'cancel',
   TaskStatus.COMPLETED: 'completed',
   TaskStatus.CREATED: 'created',
+  TaskStatus.IMPLEMENTING: 'implementing',
 };

@@ -37,7 +37,7 @@ class AddTaskScreen extends GetView<AddTaskController> {
                       .map((e) =>
                           DropdownItem(e.name ?? '', (e.id ?? 0).toString()))
                       .toList(),
-                  label: "Nhà thầu",
+                  label: "NTP/NCC",
                   onChange: (id) {
                     controller.executorId = int.parse(id);
                   },
@@ -53,15 +53,22 @@ class AddTaskScreen extends GetView<AddTaskController> {
               height: 10,
             ),
             NumberInput(
-              label: "Số lượng",
+              label: "Số lượng tạm tính",
               controller: controller.quantityController,
             ),
             SizedBox(
               height: 10,
             ),
             NumberInput(
-              label: "Đơn giá",
+              label: "Đơn giá tạm tính",
               controller: controller.priceController,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextInput(
+              label: "Đơn vị tính",
+              controller: controller.unitController,
             ),
             SizedBox(
               height: 10,
@@ -90,6 +97,28 @@ class AddTaskScreen extends GetView<AddTaskController> {
               ],
             ),
             // Spacer(),
+            SizedBox(
+              height: 10,
+            ),
+            Obx(() => DropDownInput(
+                  items: [
+                    DropdownItem("Gấp", "high"),
+                    DropdownItem("Bình thường", "normal"),
+                    DropdownItem("Không ưu tiên", "low")
+                  ],
+                  label: "Độ ưu tiên",
+                  onChange: (id) {
+                    controller.priority.value = id;
+                  },
+                  value: controller.priority.value,
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            TextInput(
+              label: "Ghi chú",
+              controller: controller.descriptionController,
+            ),
             SizedBox(
               height: 10,
             ),

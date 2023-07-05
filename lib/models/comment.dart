@@ -1,28 +1,21 @@
+import 'package:coteccons_app/models/comment_creator.dart';
 import 'package:coteccons_app/models/models.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'comment.g.dart';
+
+@JsonSerializable()
 class Comment {
   int? id;
   Task? task;
   String? msg;
   DateTime? time;
+  CommentCreator creator;
 
-  Comment({this.id, this.task, this.msg, this.time});
+  Comment(this.id, this.task, this.msg, this.time, this.creator);
 
-  Comment.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    task = json['task'] != null ? new Task.fromJson(json['task']) : null;
-    msg = json['msg'];
-    time = DateTime.parse(json['time']);
-  }
+  factory Comment.fromJson(Map<String, dynamic> json) =>
+      _$CommentFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    if (this.task != null) {
-      data['task'] = this.task!.toJson();
-    }
-    data['msg'] = this.msg;
-    data['time'] = this.time;
-    return data;
-  }
+  Map<String, dynamic> toJson() => _$CommentToJson(this);
 }

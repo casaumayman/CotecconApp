@@ -16,6 +16,19 @@ enum TaskStatus {
   COMPLETED,
   @JsonValue("created")
   CREATED,
+  @JsonValue("implementing")
+  IMPLEMENTING,
+}
+
+enum TaskPriority {
+  @JsonValue("high")
+  HIGHT,
+  @JsonValue("normal")
+  NORMAL,
+  @JsonValue("low")
+  LOW,
+  @JsonValue("unknown")
+  UNKNOWN
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake)
@@ -34,10 +47,11 @@ class TaskDetail {
   int? quantity;
   int? price;
   String? description;
-  int? priorityLevel;
+  TaskPriority? priorityLevel;
   TaskStatus status;
   List<ImageInfo>? ownerImages;
   List<ImageInfo>? executorImages;
+  String? unit;
 
   TaskDetail(
       this.id,
@@ -57,7 +71,8 @@ class TaskDetail {
       this.projectName,
       this.quantity,
       this.startTime,
-      this.status);
+      this.status,
+      this.unit);
 
   factory TaskDetail.fromJson(Map<String, dynamic> json) =>
       _$TaskDetailFromJson(json);

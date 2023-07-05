@@ -10,6 +10,7 @@ class AddTaskController extends GetxController {
   final TaskRepository _taskRepository = Get.find();
   final projects = RxList<Project>();
   final executors = RxList<Executor>();
+  final priority = "hight".obs;
 
   var projectId = 0;
   var executorId = 0;
@@ -18,8 +19,10 @@ class AddTaskController extends GetxController {
   final startTimeController = TextEditingController();
   final endTimeController = TextEditingController();
   final taskNameController = TextEditingController();
+  final unitController = TextEditingController();
   final quantityController = TextEditingController();
   final priceController = TextEditingController();
+  final descriptionController = TextEditingController();
 
   @override
   void onReady() {
@@ -48,7 +51,10 @@ class AddTaskController extends GetxController {
           executorId: executorId,
           price: int.parse(priceController.text),
           projectId: projectId,
+          unit: unitController.text,
           quantity: int.parse(quantityController.text),
+          priorityLevel: priority.value,
+          description: descriptionController.text,
           startTime: startTime != null
               ? MyDateUtils.format(startTime!, format: "yyyy-MM-dd")
               : null));

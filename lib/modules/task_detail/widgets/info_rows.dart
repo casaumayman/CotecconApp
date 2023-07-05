@@ -12,14 +12,20 @@ class InfoRows extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wrap(direction: Axis.horizontal, runSpacing: 10, children: [
       InfoRow(label: "Dự án", value: task?.name ?? ''),
-      InfoRow(label: "Nhà thầu", value: task?.executorName ?? ''),
-      InfoRow(label: "Số lượng", value: (task?.quantity ?? 0).toString()),
-      InfoRow(label: "Đơn giá", value: (task?.price ?? 0).toString()),
+      InfoRow(label: "NTP/NCC", value: task?.executorName ?? ''),
+      InfoRow(
+          label: "Số lượng tạm tính", value: (task?.quantity ?? 0).toString()),
+      InfoRow(label: "Đơn giá tạm tính", value: (task?.price ?? 0).toString()),
+      InfoRow(label: "Đơn vị tính", value: (task?.unit ?? 0).toString()),
       InfoRow(label: "Ngày bắt đầu", value: task?.startTime ?? ''),
       InfoRow(label: "Ngày kết thúc", value: task?.endTime ?? ''),
       InfoRow(
           label: "Trạng thái",
           value: TaskStatusUtils.toStringLabel(task?.status)),
+      InfoRow(
+          label: "Độ ưu tiên",
+          value: TaskPriorityUtils.toStringLabel(task?.priorityLevel)),
+      InfoRow(label: "Ghi chú", value: task?.description ?? '')
     ]);
   }
 }

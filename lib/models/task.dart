@@ -15,7 +15,7 @@ class Task {
   int? quantity;
   int? price;
   String? description;
-  int? priorityLevel;
+  String? priorityLevel;
 
   Task(
       {this.id,

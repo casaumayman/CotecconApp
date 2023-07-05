@@ -1,6 +1,6 @@
 @port = 8080
 @host = coteccons.info 
-@token = Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhc3Npc3RhbnQtcHVibGljLWFwaSIsImV4cCI6IjIwMjMtMDYtMzBUMDI6MDk6NTAuMzcyMjY1NzQ2KzA3OjAwIiwidXNlcl9pZCI6Mn0.2k8rOBn6b8oNfhyyZgrqCZ7B63S8CnurSZA7zB05KOk
+@token = Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhc3Npc3RhbnQtcHVibGljLWFwaSIsImV4cCI6IjIwMjQtMDEtMDJUMDE6MjM6NDAuODM1OTkzMDE0KzA3OjAwIiwidXNlcl9pZCI6Mn0.zA88KU5PhITf0r0KpZRCK235RPbnhdhuu_rsEsXzuNE
 @task = tasks
 
 
@@ -23,23 +23,32 @@ POST http://{{host}}/api/v1/{{task}} HTTP/1.1
 Content-Type: application/json
 {{token}}
 
-{"name":"Xay Nha", "project_id":13,"executor_id":6,"start_time":"2023-10-04","end_time":"2023-04-05","quantity":300,"price":20000,"description":"san tang 2","priority_level":1}
+{"name":"Test task 2", "project_id":13,"executor_id":6,"start_time":"2023-10-04","end_time":"2023-04-05","quantity":300,"price":20000,"description":"san tang 2","priority_level":"low"}
 
 ############
 # USERS #
 ############
 # UPDATE
 
-PUT http://{{host}}/api/v1/{{task}}/5 HTTP/1.1
+PUT http://{{host}}/api/v1/{{task}}/17 HTTP/1.1
 Content-Type: application/json
 {{token}}
 
-{"name":"Betong - 2", "parent_task_id":2, "project_id":11,"executor_id":2,"start_time":"2023-06-04","end_time":"2023-04-05","quantity":300,"price":20000,"description":"san tang 2","priority_level":1}
-
+{
+    "name": "Test task 01",
+    "start_time": "2023-07-06",
+    "end_time": "2023-07-31",
+    "quantity": 10,
+    "price": 1000000,
+    "unit": "mm",
+    "description": "note",
+    "status": "created",
+    "priority_level": "low"
+  }
 ###
 
 # Read
-GET http://{{host}}/api/v1/{{task}}/8 HTTP/1.1
+GET http://{{host}}/api/v1/{{task}}/17 HTTP/1.1
 {{token}}
 ###
 
