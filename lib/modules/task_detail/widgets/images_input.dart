@@ -9,11 +9,13 @@ class ImagesInput extends StatelessWidget {
       {super.key,
       required this.images,
       this.disabled = false,
-      required this.label});
+      required this.label,
+      this.onTap});
 
   final List<Model.ImageInfo> images;
   final bool disabled;
   final String label;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +51,9 @@ class ImagesInput extends StatelessWidget {
                 ),
               );
             }
-            return ImageInput();
+            return ImageInput(
+              onTap: onTap,
+            );
           }).toList(),
         ),
       ],

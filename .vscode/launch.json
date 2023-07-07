@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "CTC",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--flavor", "ctc", "--target", "lib/main.dart" ]
+    },
+    {
+      "name": "CONS",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--flavor", "cons", "--target", "lib/main.dart" ]
+    }
+  ],
+  "compounds": []
+}

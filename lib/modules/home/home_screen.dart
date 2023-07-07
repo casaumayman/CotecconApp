@@ -20,11 +20,13 @@ class HomeScreen extends GetView<HomeController> {
               "Công việc",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
-            AddTaskButton(
-              onPress: () {
-                Get.toNamed(Routes.ADD_TASK);
-              },
-            ),
+            Obx(() => controller.isCTCApp.value
+                ? AddTaskButton(
+                    onPress: () {
+                      Get.toNamed(Routes.ADD_TASK);
+                    },
+                  )
+                : SizedBox()),
           ],
         ),
         Expanded(

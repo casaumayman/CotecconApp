@@ -4,6 +4,7 @@ import 'package:coteccons_app/modules/home/home.dart';
 import 'package:coteccons_app/modules/image_view/image_view.dart';
 import 'package:coteccons_app/modules/modules.dart';
 import 'package:coteccons_app/modules/task_detail/task_detail.dart';
+import 'package:coteccons_app/modules/update_task/update_task.dart';
 import 'package:get/get.dart';
 
 part 'app_routes.dart';
@@ -25,6 +26,10 @@ class AppPages {
         name: Routes.ADD_TASK,
         page: () => AddTaskScreen(),
         binding: AddTaskBinding()),
+    GetPage(
+        name: Routes.UPDATE_TASK,
+        page: () => UpdateTaskScreen(),
+        binding: UpdateTaskBinding()),
     GetPage(
         name: Routes.TASK_DETAIL,
         page: () => TaskDetailScreen(),

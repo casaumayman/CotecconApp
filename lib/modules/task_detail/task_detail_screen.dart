@@ -1,3 +1,4 @@
+import 'package:coteccons_app/shared/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:coteccons_app/models/task_detail.dart';
 import 'package:coteccons_app/modules/task_detail/task_detail_controller.dart';
@@ -12,61 +13,70 @@ class TaskDetailScreen extends GetView<TaskDetailController> {
 
   @override
   Widget build(BuildContext context) {
-    return BaseScreen(
-      title: controller.task.name,
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Obx(() => InfoRows(task: controller.taskDetail.value)),
-            Obx(() {
-              final listImg = (controller.taskDetail.value?.ownerImages ?? []);
-              return ImagesInput(label: "Ảnh từ CTC", images: listImg);
-            }),
-            Obx(() {
-              final listImg =
-                  (controller.taskDetail.value?.executorImages ?? []);
-              return ImagesInput(
+    return Obx(() {
+      final listImgOwner = (controller.taskDetail.value?.ownerImages ?? []);
+      final listImgExec = (controller.taskDetail.value?.executorImages ?? []);
+      final comments = controller.listComment.toList();
+
+      return BaseScreen(
+        appBar: controller.isCTCApp.isTrue
+            ? CustomAppBar(
+                title: controller.task.name ?? "",
+                actionIcon: Icon(Icons.edit),
+                actionLabel: "Sửa công việc",
+                onAction: controller.gotoEdit)
+            : null,
+        title: controller.task.name,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              InfoRows(task: controller.taskDetail.value),
+              ImagesInput(
+                label: "Ảnh từ CTC",
+                images: listImgOwner,
+                disabled: controller.isCTCApp.isFalse,
+                onTap: controller.openCamera,
+              ),
+              ImagesInput(
                 label: "Ảnh từ constructor",
-                images: listImg,
-                disabled: true,
-              );
-            }),
-            Obx(() {
-              final comments = controller.listComment.toList();
-              return Comments(commemts: comments);
-            }),
-            SizedBox(
-              height: 30,
-            ),
-            SafeArea(
-                top: false,
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: OutlinedButton(
-                          onPressed: () {
-                            controller.changeStatus(TaskStatus.REJECTED);
-                          },
-                          child: Text(
-                            "Yêu cầu làm lại",
-                            style: TextStyle(color: hexToColor("#081D4D")),
-                          )),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Expanded(
-                        child: ElevatedButton(
+                images: listImgExec,
+                disabled: controller.isCTCApp.isTrue,
+                onTap: controller.openCamera,
+              ),
+              Comments(commemts: comments),
+              SizedBox(
+                height: 30,
+              ),
+              SafeArea(
+                  top: false,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: OutlinedButton(
                             onPressed: () {
-                              controller.changeStatus(TaskStatus.ACCEPTED);
+                              controller.changeStatus(TaskStatus.REJECTED);
                             },
-                            child: Text("Hoàn tất")))
-                  ],
-                ))
-          ],
+                            child: Text(
+                              "Yêu cầu làm lại",
+                              style: TextStyle(color: hexToColor("#081D4D")),
+                            )),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                          child: ElevatedButton(
+                              onPressed: () {
+                                controller.changeStatus(TaskStatus.ACCEPTED);
+                              },
+                              child: Text("Hoàn tất")))
+                    ],
+                  ))
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

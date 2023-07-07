@@ -74,4 +74,5 @@ const _$TaskStatusEnumMap = {
   TaskStatus.COMPLETED: 'completed',
   TaskStatus.CREATED: 'created',
   TaskStatus.IMPLEMENTING: 'implementing',
+  TaskStatus.UNKNOWN: 'unknown',
 };

@@ -5,11 +5,16 @@ import 'package:coteccons_app/shared/widgets/base_screen/base_app_bar.dart';
 
 class BaseScreen extends StatelessWidget {
   const BaseScreen(
-      {super.key, this.title, this.child, this.resizeToAvoidBottomInset});
+      {super.key,
+      this.title,
+      this.child,
+      this.resizeToAvoidBottomInset,
+      this.appBar});
 
   final String? title;
   final Widget? child;
   final bool? resizeToAvoidBottomInset;
+  final Widget? appBar;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +30,10 @@ class BaseScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.max,
             children: [
-              BaseAppBar(
-                title: title,
-              ),
+              appBar ??
+                  BaseAppBar(
+                    title: title,
+                  ),
               Expanded(
                 child: Container(
                   decoration: BoxDecoration(

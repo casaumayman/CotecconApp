@@ -18,6 +18,8 @@ enum TaskStatus {
   CREATED,
   @JsonValue("implementing")
   IMPLEMENTING,
+  @JsonValue("unknown")
+  UNKNOWN,
 }
 
 enum TaskPriority {
