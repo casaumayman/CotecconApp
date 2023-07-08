@@ -13,12 +13,14 @@ class DropDownInput extends StatelessWidget {
       required this.items,
       this.value,
       this.onChange,
+      this.disabled = false,
       required this.label});
 
   final List<DropdownItem> items;
   final String label;
   final String? value;
   final void Function(String id)? onChange;
+  final bool? disabled;
 
   @override
   Widget build(BuildContext context) {
@@ -51,11 +53,13 @@ class DropDownInput extends StatelessWidget {
                     ))
                 .toList(),
             isExpanded: true,
-            onChanged: (value) {
-              if (onChange != null && value != null) {
-                onChange!(value);
-              }
-            },
+            onChanged: disabled == true
+                ? null
+                : (value) {
+                    if (onChange != null && value != null) {
+                      onChange!(value);
+                    }
+                  },
             // itemHeight: 20,
           ),
         )

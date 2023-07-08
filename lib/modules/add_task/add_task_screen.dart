@@ -78,7 +78,6 @@ class AddTaskScreen extends GetView<AddTaskController> {
                 Expanded(
                     child: DateInput(
                   label: "Ngày bắt đầu",
-                  controller: controller.startTimeController,
                   onChange: (date) {
                     controller.startTime = date;
                   },
@@ -89,7 +88,6 @@ class AddTaskScreen extends GetView<AddTaskController> {
                 Expanded(
                     child: DateInput(
                   label: "Ngày kết thúc",
-                  controller: controller.endTimeController,
                   onChange: (date) {
                     controller.endTime = date;
                   },

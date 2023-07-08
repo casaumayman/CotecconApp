@@ -3,20 +3,24 @@ import 'package:coteccons_app/shared/constants/colors.dart';
 import 'package:coteccons_app/shared/utils/utils.dart';
 
 class DateInput extends StatelessWidget {
-  const DateInput(
+  DateInput(
       {super.key,
       required this.label,
-      required this.controller,
       this.onChange,
+      this.value,
       this.isRequired = false});
 
   final String label;
-  final TextEditingController controller;
+  final TextEditingController controller = new TextEditingController();
   final Function(DateTime)? onChange;
   final bool isRequired;
+  final DateTime? value;
 
   @override
   Widget build(BuildContext context) {
+    if (value != null) {
+      controller.text = MyDateUtils.format(value!, format: "yyyy-MM-dd");
+    }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -39,9 +43,9 @@ class DateInput extends StatelessWidget {
               final today = DateTime.now();
               showDatePicker(
                       context: context,
-                      initialDate: today,
-                      firstDate: today,
-                      lastDate: today.add(Duration(days: 365)))
+                      initialDate: value ?? today,
+                      firstDate: DateTime(1980),
+                      lastDate: DateTime(2100))
                   .then((value) {
                 if (value != null) {
                   onChange?.call(value);

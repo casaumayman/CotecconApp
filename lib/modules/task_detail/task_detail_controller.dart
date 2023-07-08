@@ -27,30 +27,24 @@ class TaskDetailController extends GetxController {
     super.onReady();
   }
 
-  void fetchData() {
+  Future<void> fetchData() async {
     if (task.id == null) {
       return;
     }
-    fetchInfo();
-    fetchCemments();
+    await Future.wait([fetchInfo(), fetchCemments()]);
   }
 
-  void fetchInfo() {
-    _taskRepository.getDetail(task.id!).then((taskRes) {
-      if (taskRes == null) {
-        return;
-      }
-      taskDetail.value = taskRes;
-    });
+  Future<void> fetchInfo() async {
+    final taskRes = await _taskRepository.getDetail(task.id!);
+    taskDetail.value = taskRes;
   }
 
-  void fetchCemments() {
-    _taskRepository.getListComment(task.id!).then((comments) {
-      if (comments != null) {
-        listComment.clear();
-        listComment.addAll(comments);
-      }
-    });
+  Future<void> fetchCemments() async {
+    final comments = await _taskRepository.getListComment(task.id!);
+    if (comments != null) {
+      listComment.clear();
+      listComment.addAll(comments);
+    }
   }
 
   void sendComment(String message) {
@@ -83,6 +77,10 @@ class TaskDetailController extends GetxController {
     if (taskDetail.value == null) {
       return;
     }
-    Get.toNamed(Routes.UPDATE_TASK, arguments: taskDetail.value);
+    final data =
+        await Get.toNamed(Routes.UPDATE_TASK, arguments: taskDetail.value);
+    if (data == "success") {
+      fetchData();
+    }
   }
 }

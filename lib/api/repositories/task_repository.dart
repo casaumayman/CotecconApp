@@ -1,3 +1,4 @@
+import 'package:coteccons_app/models/request/update_task_request.dart';
 import 'package:dio/dio.dart';
 import 'package:coteccons_app/models/models.dart';
 import 'package:coteccons_app/shared/shared.dart';
@@ -21,6 +22,10 @@ class TaskRepository {
 
   Future<void> create(CreateTaskRequest body) async {
     await _apiProvider.post('/tasks', data: body.toJson());
+  }
+
+  Future<void> update(int id, UpdateTaskRequest body) async {
+    await _apiProvider.put('/tasks/$id', data: body.toJson());
   }
 
   Future<List<Comment>?> getListComment(int id) async {

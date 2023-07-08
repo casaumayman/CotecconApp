@@ -24,7 +24,7 @@ enum TaskStatus {
 
 enum TaskPriority {
   @JsonValue("high")
-  HIGHT,
+  HIGH,
   @JsonValue("normal")
   NORMAL,
   @JsonValue("low")

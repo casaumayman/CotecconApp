@@ -24,7 +24,9 @@ TaskDetail _$TaskDetailFromJson(Map<String, dynamic> json) => TaskDetail(
           ?.map((e) => ImageInfo.fromJson(e as Map<String, dynamic>))
           .toList(),
       json['price'] as int?,
-      $enumDecodeNullable(_$TaskPriorityEnumMap, json['priority_level']),
+      json["priority_level"] == "hight"
+          ? TaskPriority.HIGH
+          : $enumDecodeNullable(_$TaskPriorityEnumMap, json['priority_level']),
       json['project'] == null
           ? null
           : Project.fromJson(json['project'] as Map<String, dynamic>),
@@ -60,7 +62,7 @@ Map<String, dynamic> _$TaskDetailToJson(TaskDetail instance) =>
     };
 
 const _$TaskPriorityEnumMap = {
-  TaskPriority.HIGHT: 'high',
+  TaskPriority.HIGH: 'high',
   TaskPriority.NORMAL: 'normal',
   TaskPriority.LOW: 'low',
   TaskPriority.UNKNOWN: 'unknown',

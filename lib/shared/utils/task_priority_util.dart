@@ -3,7 +3,7 @@ import 'package:coteccons_app/models/models.dart';
 class TaskPriorityUtils {
   static String toStringLabel(TaskPriority? priority) {
     switch (priority) {
-      case TaskPriority.HIGHT:
+      case TaskPriority.HIGH:
         return "Gấp";
       case TaskPriority.NORMAL:
         return "Bình thường";
@@ -16,7 +16,7 @@ class TaskPriorityUtils {
 
   static String toStringJson(TaskPriority priority) {
     const taskPriorityEnumMap = {
-      TaskPriority.HIGHT: 'high',
+      TaskPriority.HIGH: 'high',
       TaskPriority.NORMAL: 'normal',
       TaskPriority.LOW: 'low',
       TaskPriority.UNKNOWN: 'unknown',

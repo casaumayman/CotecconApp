@@ -9,7 +9,6 @@ import 'package:get/get.dart';
 
 class UpdateTaskScreen extends GetView<UpdateTaskController> {
   const UpdateTaskScreen({super.key});
-  //TODO: Update task
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
@@ -25,11 +24,13 @@ class UpdateTaskScreen extends GetView<UpdateTaskController> {
                           DropdownItem(p.name ?? '', (p.id ?? 0).toString()))
                       .toList(),
                   label: "Dự án",
+                  value: controller.projectId.value?.toString(),
+                  disabled: true,
                   onChange: (id) {
-                    controller.projectId = int.parse(id);
+                    controller.projectId.value = int.parse(id);
                   },
                 )),
-            TextInput(label: "Dự án", value: controller.taskDetail.name),
+            // TextInput(label: "Dự án", value: controller.taskDetail.name),
             SizedBox(
               height: 10,
             ),
@@ -39,8 +40,9 @@ class UpdateTaskScreen extends GetView<UpdateTaskController> {
                           DropdownItem(e.name ?? '', (e.id ?? 0).toString()))
                       .toList(),
                   label: "NTP/NCC",
+                  value: controller.executorId.value?.toString(),
                   onChange: (id) {
-                    controller.executorId = int.parse(id);
+                    controller.executorId.value = int.parse(id);
                   },
                 )),
             SizedBox(
@@ -77,24 +79,24 @@ class UpdateTaskScreen extends GetView<UpdateTaskController> {
             Row(
               children: [
                 Expanded(
-                    child: DateInput(
-                  label: "Ngày bắt đầu",
-                  controller: controller.startTimeController,
-                  onChange: (date) {
-                    controller.startTime = date;
-                  },
-                )),
+                    child: Obx(() => DateInput(
+                          label: "Ngày bắt đầu",
+                          value: controller.startTime.value,
+                          onChange: (date) {
+                            controller.startTime.value = date;
+                          },
+                        ))),
                 SizedBox(
                   width: 10,
                 ),
                 Expanded(
-                    child: DateInput(
-                  label: "Ngày kết thúc",
-                  controller: controller.endTimeController,
-                  onChange: (date) {
-                    controller.endTime = date;
-                  },
-                )),
+                    child: Obx(() => DateInput(
+                          label: "Ngày kết thúc",
+                          value: controller.endTime.value,
+                          onChange: (date) {
+                            controller.endTime.value = date;
+                          },
+                        ))),
               ],
             ),
             // Spacer(),
@@ -125,7 +127,7 @@ class UpdateTaskScreen extends GetView<UpdateTaskController> {
             ),
             ElevatedButton(
               child: Text("Cập nhật"),
-              onPressed: controller.createTask,
+              onPressed: controller.updateTask,
             )
           ],
         ),

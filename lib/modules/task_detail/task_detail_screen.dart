@@ -27,53 +27,56 @@ class TaskDetailScreen extends GetView<TaskDetailController> {
                 onAction: controller.gotoEdit)
             : null,
         title: controller.task.name,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              InfoRows(task: controller.taskDetail.value),
-              ImagesInput(
-                label: "Ảnh từ CTC",
-                images: listImgOwner,
-                disabled: controller.isCTCApp.isFalse,
-                onTap: controller.openCamera,
-              ),
-              ImagesInput(
-                label: "Ảnh từ constructor",
-                images: listImgExec,
-                disabled: controller.isCTCApp.isTrue,
-                onTap: controller.openCamera,
-              ),
-              Comments(commemts: comments),
-              SizedBox(
-                height: 30,
-              ),
-              SafeArea(
-                  top: false,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: OutlinedButton(
-                            onPressed: () {
-                              controller.changeStatus(TaskStatus.REJECTED);
-                            },
-                            child: Text(
-                              "Yêu cầu làm lại",
-                              style: TextStyle(color: hexToColor("#081D4D")),
-                            )),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                          child: ElevatedButton(
+        child: RefreshIndicator(
+          onRefresh: controller.fetchData,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                InfoRows(task: controller.taskDetail.value),
+                ImagesInput(
+                  label: "Ảnh từ CTC",
+                  images: listImgOwner,
+                  disabled: controller.isCTCApp.isFalse,
+                  onTap: controller.openCamera,
+                ),
+                ImagesInput(
+                  label: "Ảnh từ constructor",
+                  images: listImgExec,
+                  disabled: controller.isCTCApp.isTrue,
+                  onTap: controller.openCamera,
+                ),
+                Comments(commemts: comments),
+                SizedBox(
+                  height: 30,
+                ),
+                SafeArea(
+                    top: false,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: OutlinedButton(
                               onPressed: () {
-                                controller.changeStatus(TaskStatus.ACCEPTED);
+                                controller.changeStatus(TaskStatus.REJECTED);
                               },
-                              child: Text("Hoàn tất")))
-                    ],
-                  ))
-            ],
+                              child: Text(
+                                "Yêu cầu làm lại",
+                                style: TextStyle(color: hexToColor("#081D4D")),
+                              )),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  controller.changeStatus(TaskStatus.ACCEPTED);
+                                },
+                                child: Text("Hoàn tất")))
+                      ],
+                    ))
+              ],
+            ),
           ),
         ),
       );

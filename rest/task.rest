@@ -30,21 +30,14 @@ Content-Type: application/json
 ############
 # UPDATE
 
-PUT http://{{host}}/api/v1/{{task}}/17 HTTP/1.1
+PUT http://{{host}}/api/v1/{{task}}/8 HTTP/1.1
 Content-Type: application/json
 {{token}}
 
 {
-    "name": "Test task 01",
-    "start_time": "2023-07-06",
-    "end_time": "2023-07-31",
-    "quantity": 10,
-    "price": 1000000,
-    "unit": "mm",
-    "description": "note",
-    "status": "created",
+    "id": 8,
     "priority_level": "low"
-  }
+}
 ###
 
 # Read
@@ -58,7 +51,7 @@ GET http://{{host}}/api/v1/{{task}} HTTP/1.1
 ###
 
 # Delete
-DELETE http://{{host}}/api/v1/{{task}}/7 HTTP/1.1
+DELETE http://{{host}}/api/v1/{{task}}/8 HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 {{token}}
 ###
