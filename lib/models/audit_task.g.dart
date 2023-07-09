@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'task_detail.dart';
+part of 'audit_task.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-TaskDetail _$TaskDetailFromJson(Map<String, dynamic> json) => TaskDetail(
+AuditTask _$AuditTaskFromJson(Map<String, dynamic> json) => AuditTask(
       json['id'] as int?,
       json['code'] as String?,
       json['description'] as String?,
@@ -23,21 +23,17 @@ TaskDetail _$TaskDetailFromJson(Map<String, dynamic> json) => TaskDetail(
       (json['owner_images'] as List<dynamic>?)
           ?.map((e) => ImageInfo.fromJson(e as Map<String, dynamic>))
           .toList(),
-      json['price'] as int?,
       $enumDecodeNullable(_$TaskPriorityEnumMap, json['priority_level']),
       json['project'] == null
           ? null
           : Project.fromJson(json['project'] as Map<String, dynamic>),
       json['project_id'] as int?,
       json['project_name'] as String?,
-      json['quantity'] as int?,
       json['start_time'] as String?,
       $enumDecode(_$TaskStatusEnumMap, json['status']),
-      json['unit'] as String?,
     );
 
-Map<String, dynamic> _$TaskDetailToJson(TaskDetail instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$AuditTaskToJson(AuditTask instance) => <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
       'name': instance.name,
@@ -49,14 +45,11 @@ Map<String, dynamic> _$TaskDetailToJson(TaskDetail instance) =>
       'executor': instance.executor,
       'start_time': instance.startTime,
       'end_time': instance.endTime,
-      'quantity': instance.quantity,
-      'price': instance.price,
       'description': instance.description,
       'priority_level': _$TaskPriorityEnumMap[instance.priorityLevel],
       'status': _$TaskStatusEnumMap[instance.status]!,
       'owner_images': instance.ownerImages,
       'executor_images': instance.executorImages,
-      'unit': instance.unit,
     };
 
 const _$TaskPriorityEnumMap = {

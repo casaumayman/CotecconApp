@@ -9,18 +9,21 @@ class BaseScreen extends StatelessWidget {
       this.title,
       this.child,
       this.resizeToAvoidBottomInset,
-      this.appBar});
+      this.appBar,
+      this.bottomNavigationBar});
 
   final String? title;
   final Widget? child;
   final bool? resizeToAvoidBottomInset;
   final Widget? appBar;
+  final Widget? bottomNavigationBar;
 
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     return Scaffold(
       resizeToAvoidBottomInset: resizeToAvoidBottomInset,
+      bottomNavigationBar: bottomNavigationBar,
       body: Stack(
         children: [
           Container(

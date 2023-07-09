@@ -1,6 +1,6 @@
 import 'package:coteccons_app/routes/routes.dart';
+import 'package:coteccons_app/shared/shared.dart';
 import 'package:flutter/material.dart';
-import 'package:coteccons_app/modules/task_detail/widgets/image_input.dart';
 import 'package:coteccons_app/models/models.dart' as Model;
 import 'package:get/get.dart';
 

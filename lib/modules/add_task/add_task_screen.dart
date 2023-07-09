@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:coteccons_app/modules/add_task/add_task_controller.dart';
-import 'package:coteccons_app/modules/add_task/widgets/date_input.dart';
-import 'package:coteccons_app/modules/add_task/widgets/dropdown_input.dart';
-import 'package:coteccons_app/modules/add_task/widgets/number_input.dart';
-import 'package:coteccons_app/modules/add_task/widgets/text_input.dart';
+import 'package:flutter/material.dart';
 import 'package:coteccons_app/shared/shared.dart';
 import 'package:get/get.dart';
 

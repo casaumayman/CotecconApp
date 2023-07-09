@@ -1,7 +1,7 @@
+import 'package:coteccons_app/modules/private_task_detail/widgets/comment_input.dart';
 import 'package:coteccons_app/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:coteccons_app/models/comment.dart';
-import 'package:coteccons_app/modules/task_detail/widgets/comment_input.dart';
 
 class Comments extends StatelessWidget {
   const Comments({super.key, required this.commemts});

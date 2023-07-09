@@ -1,14 +1,13 @@
-import 'package:coteccons_app/modules/task_detail/widgets/comments.dart';
-import 'package:coteccons_app/shared/widgets/custom_app_bar.dart';
+import 'package:coteccons_app/models/models.dart';
+import 'package:coteccons_app/modules/private_task_detail/task_detail_controller.dart';
+import 'package:coteccons_app/modules/private_task_detail/widgets/comments.dart';
+import 'package:coteccons_app/modules/private_task_detail/widgets/info_rows.dart';
 import 'package:flutter/material.dart';
-import 'package:coteccons_app/models/task_detail.dart';
-import 'package:coteccons_app/modules/task_detail/task_detail_controller.dart';
-import 'package:coteccons_app/modules/task_detail/widgets/info_rows.dart';
 import 'package:coteccons_app/shared/shared.dart';
 import 'package:get/get.dart';
 
-class TaskDetailScreen extends GetView<TaskDetailController> {
-  TaskDetailScreen({super.key});
+class PrivateTaskDetailScreen extends GetView<PrivateTaskDetailController> {
+  PrivateTaskDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +17,6 @@ class TaskDetailScreen extends GetView<TaskDetailController> {
       final comments = controller.listComment.toList();
 
       return BaseScreen(
-        appBar: controller.isCTCApp.isTrue
-            ? CustomAppBar(
-                title: controller.task.name ?? "",
-                actionIcon: Icon(Icons.edit),
-                actionLabel: "Sửa công việc",
-                onAction: controller.gotoEdit)
-            : null,
         title: controller.task.name,
         child: RefreshIndicator(
           onRefresh: controller.fetchData,

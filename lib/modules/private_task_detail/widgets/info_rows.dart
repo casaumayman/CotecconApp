@@ -5,7 +5,7 @@ import 'package:coteccons_app/shared/shared.dart';
 class InfoRows extends StatelessWidget {
   const InfoRows({super.key, required this.task});
 
-  final TaskDetail? task;
+  final PrivateTask? task;
 
   @override
   Widget build(BuildContext context) {

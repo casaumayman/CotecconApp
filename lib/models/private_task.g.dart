@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'task_detail.dart';
+part of 'private_task.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-TaskDetail _$TaskDetailFromJson(Map<String, dynamic> json) => TaskDetail(
+PrivateTask _$PrivateTaskFromJson(Map<String, dynamic> json) => PrivateTask(
       json['id'] as int?,
       json['code'] as String?,
       json['description'] as String?,
@@ -36,7 +36,7 @@ TaskDetail _$TaskDetailFromJson(Map<String, dynamic> json) => TaskDetail(
       json['unit'] as String?,
     );
 
-Map<String, dynamic> _$TaskDetailToJson(TaskDetail instance) =>
+Map<String, dynamic> _$PrivateTaskToJson(PrivateTask instance) =>
     <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
