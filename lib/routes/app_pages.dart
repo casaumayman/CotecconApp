@@ -1,5 +1,7 @@
+import 'package:coteccons_app/modules/add_audit_task/add_audit_task.dart';
 import 'package:coteccons_app/modules/add_my_task/add_my_task.dart';
 import 'package:coteccons_app/modules/add_task/add_task.dart';
+import 'package:coteccons_app/modules/audit_detail/audit_detail.dart';
 import 'package:coteccons_app/modules/auth/auth.dart';
 import 'package:coteccons_app/modules/home/home.dart';
 import 'package:coteccons_app/modules/image_view/image_view.dart';
@@ -33,6 +35,10 @@ class AppPages {
         page: () => AddMyTaskScreen(),
         binding: AddMyTaskBinding()),
     GetPage(
+        name: Routes.ADD_AUDIT,
+        page: () => AddAuditTaskScreen(),
+        binding: AddAuditTaskBinding()),
+    GetPage(
         name: Routes.UPDATE_TASK,
         page: () => UpdateTaskScreen(),
         binding: UpdateTaskBinding()),
@@ -44,6 +50,10 @@ class AppPages {
         name: Routes.PRIVATE_TASK_DETAIL,
         page: () => PrivateTaskDetailScreen(),
         binding: PrivateTaskDetailBinding()),
+    GetPage(
+        name: Routes.AUDIT_TASK_DETAIL,
+        page: () => AuditDetailScreen(),
+        binding: AuditDetailBinding()),
     GetPage(
       name: Routes.IMAGE_VIEW,
       page: () => ImageViewScreen(),

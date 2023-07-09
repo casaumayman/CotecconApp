@@ -1,9 +1,9 @@
-import 'package:coteccons_app/modules/private_task_detail/task_detail_controller.dart';
+import 'package:coteccons_app/modules/audit_detail/audit_detail_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:coteccons_app/shared/constants/colors.dart';
 import 'package:get/get.dart';
 
-class CommentInput extends GetView<PrivateTaskDetailController> {
+class CommentInput extends GetView<AuditDetailController> {
   const CommentInput({super.key});
 
   @override

@@ -1,5 +1,6 @@
 import 'package:coteccons_app/api/api.dart';
 import 'package:coteccons_app/models/models.dart';
+import 'package:coteccons_app/routes/routes.dart';
 import 'package:get/get.dart';
 
 class ListAuditTaskController extends GetxController {
@@ -9,16 +10,25 @@ class ListAuditTaskController extends GetxController {
 
   @override
   void onReady() {
-    _auditTaskRepository.getList().then((taskList) {
-      if (taskList != null) {
-        tasks.addAll(taskList);
-      }
-    });
+    fetchData();
     // FlavorUtil.getFlavor().then((flavor) {
     //   if (flavor != null) {
     //     isCTCApp.value = flavor == Flavor.CTC;
     //   }
     // });
     super.onReady();
+  }
+
+  Future<void> fetchData() async {
+    final task = await _auditTaskRepository.getList();
+    tasks.clear();
+    tasks.addAll(task ?? []);
+  }
+
+  Future<void> goToAddScreen() async {
+    final data = await Get.toNamed(Routes.ADD_AUDIT);
+    if (data == "success") {
+      fetchData();
+    }
   }
 }

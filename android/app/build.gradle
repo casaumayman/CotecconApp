@@ -79,6 +79,11 @@ android {
             applicationId "coteccon.tuanhuynh.cons_demo"
         }
     }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 
 flutter {

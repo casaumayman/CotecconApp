@@ -36,7 +36,7 @@ class ListMyPrivateTask extends GetView<ListMyPrivateTaskController> {
                             task: task,
                             onTap: () {
                               Get.toNamed(Routes.PRIVATE_TASK_DETAIL,
-                                  arguments: task);
+                                  arguments: {"task": task, "isOwn": true});
                             },
                           ))
                       .toList(),

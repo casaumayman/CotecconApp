@@ -3,8 +3,8 @@ import 'package:coteccons_app/models/models.dart';
 import 'package:get/get.dart';
 
 class ListPrivateTaskController extends GetxController {
-  final _privateTaskRepository = Get.find<PrivateTaskRepository>();
-  final tasks = RxList<PrivateTask>();
+  final _privateTaskRepository = Get.find<AuditTaskRepository>();
+  final tasks = RxList<AuditTask>();
   // final isCTCApp = false.obs;
 
   @override

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:coteccons_app/shared/shared.dart';
 import 'package:get/get.dart';
 
-class AddMyTaskScreen extends GetView<AddMyTaskController> {
+class AddMyTaskScreen extends GetView<AddMyPrivateTaskController> {
   const AddMyTaskScreen({super.key});
 
   @override

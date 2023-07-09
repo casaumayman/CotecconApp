@@ -9,7 +9,8 @@ import 'package:image_picker/image_picker.dart';
 
 class PrivateTaskDetailController extends GetxController {
   final PrivateTaskRepository _taskRepository = Get.find();
-  final PrivateTask task = Get.arguments;
+  final PrivateTask task = Get.arguments["task"];
+  final bool isOwn = Get.arguments['isOwn'];
   final taskDetail = Rx<PrivateTask?>(null);
   final listComment = RxList<Comment>([]);
 

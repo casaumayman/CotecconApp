@@ -4,10 +4,10 @@ import 'package:coteccons_app/models/models.dart';
 import 'package:coteccons_app/shared/shared.dart';
 import 'package:get/get.dart';
 
-class AddMyTaskController extends GetxController {
+class AddMyPrivateTaskController extends GetxController {
   final ProjectRepository _projectRepository = Get.find();
   final ExecutorRepository _executorRepository = Get.find();
-  final PrivateTaskRepository _taskRepository = Get.find();
+  final AuditTaskRepository _taskRepository = Get.find();
   final projects = RxList<Project>();
   final executors = RxList<Executor>();
   final priority = "high".obs;
