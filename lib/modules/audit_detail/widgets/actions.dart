@@ -1,10 +1,10 @@
 import 'package:coteccons_app/models/models.dart';
-import 'package:coteccons_app/modules/private_task_detail/task_detail_controller.dart';
+import 'package:coteccons_app/modules/audit_detail/audit_detail_controller.dart';
 import 'package:coteccons_app/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ActionButtons extends GetView<PrivateTaskDetailController> {
+class ActionButtons extends GetView<AuditDetailController> {
   const ActionButtons({super.key});
 
   @override

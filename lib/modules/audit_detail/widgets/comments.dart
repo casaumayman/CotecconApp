@@ -1,4 +1,4 @@
-import 'package:coteccons_app/modules/private_task_detail/widgets/comment_input.dart';
+import 'package:coteccons_app/modules/audit_detail/widgets/comment_input.dart';
 import 'package:coteccons_app/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:coteccons_app/models/comment.dart';

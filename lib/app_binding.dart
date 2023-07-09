@@ -8,7 +8,7 @@ class AppBinding extends Bindings {
     Get.put(BaseProvider().dio, permanent: true);
     Get.put(AuthRepository(), permanent: true);
     Get.put(TaskRepository(), permanent: true);
-    Get.put(AuditTaskRepository(), permanent: true);
+    Get.put(PrivateTaskRepository(), permanent: true);
     Get.put(AuditTaskRepository(), permanent: true);
     Get.put(ProjectRepository(), permanent: true);
     Get.put(ExecutorRepository(), permanent: true);

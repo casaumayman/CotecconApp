@@ -5,7 +5,7 @@ import 'package:coteccons_app/shared/shared.dart';
 class TaskWidget extends StatelessWidget {
   const TaskWidget({super.key, required this.task, required this.onTap});
 
-  final AuditTask task;
+  final PrivateTask task;
   final void Function() onTap;
 
   @override

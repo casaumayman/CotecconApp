@@ -4,8 +4,8 @@ import 'package:coteccons_app/routes/routes.dart';
 import 'package:get/get.dart';
 
 class ListMyPrivateTaskController extends GetxController {
-  final _privateTaskRepository = Get.find<AuditTaskRepository>();
-  final tasks = RxList<AuditTask>();
+  final _privateTaskRepository = Get.find<PrivateTaskRepository>();
+  final tasks = RxList<PrivateTask>();
   // final isCTCApp = false.obs;
 
   @override
