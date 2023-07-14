@@ -14,11 +14,9 @@ AuditTask _$AuditTaskFromJson(Map<String, dynamic> json) => AuditTask(
       json['executor'] == null
           ? null
           : Executor.fromJson(json['executor'] as Map<String, dynamic>),
-      json['executor_id'] as int?,
       (json['executor_images'] as List<dynamic>?)
           ?.map((e) => ImageInfo.fromJson(e as Map<String, dynamic>))
           .toList(),
-      json['executor_name'] as String?,
       json['name'] as String?,
       (json['owner_images'] as List<dynamic>?)
           ?.map((e) => ImageInfo.fromJson(e as Map<String, dynamic>))
@@ -40,8 +38,6 @@ Map<String, dynamic> _$AuditTaskToJson(AuditTask instance) => <String, dynamic>{
       'project_id': instance.projectId,
       'project_name': instance.projectName,
       'project': instance.project,
-      'executor_id': instance.executorId,
-      'executor_name': instance.executorName,
       'executor': instance.executor,
       'start_time': instance.startTime,
       'end_time': instance.endTime,
@@ -66,6 +62,7 @@ const _$TaskStatusEnumMap = {
   TaskStatus.CANCELED: 'cancel',
   TaskStatus.COMPLETED: 'completed',
   TaskStatus.CREATED: 'created',
+  TaskStatus.APPROVED: 'approved',
   TaskStatus.IMPLEMENTING: 'implementing',
   TaskStatus.UNKNOWN: 'unknown',
 };

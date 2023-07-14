@@ -1,4 +1,5 @@
 import 'package:coteccons_app/modules/task_detail/widgets/comments.dart';
+import 'package:coteccons_app/modules/task_detail/widgets/sub_task_action.dart';
 import 'package:coteccons_app/shared/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:coteccons_app/models/task_detail.dart';
@@ -20,12 +21,12 @@ class TaskDetailScreen extends GetView<TaskDetailController> {
       return BaseScreen(
         appBar: controller.isCTCApp.isTrue
             ? CustomAppBar(
-                title: controller.task.name ?? "",
+                title: controller.taskDetail.value?.name ?? "",
                 actionIcon: Icon(Icons.edit),
                 actionLabel: "Sửa công việc",
                 onAction: controller.gotoEdit)
             : null,
-        title: controller.task.name,
+        title: controller.taskDetail.value?.name,
         child: RefreshIndicator(
           onRefresh: controller.fetchData,
           child: SingleChildScrollView(
@@ -47,8 +48,12 @@ class TaskDetailScreen extends GetView<TaskDetailController> {
                 ),
                 Comments(commemts: comments),
                 SizedBox(
-                  height: 30,
+                  height: 10,
                 ),
+                SubTaskAction(),
+                // SizedBox(
+                //   height: 30,
+                // ),
                 SafeArea(
                     top: false,
                     child: Row(

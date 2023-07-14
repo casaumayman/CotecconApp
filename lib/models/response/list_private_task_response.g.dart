@@ -9,9 +9,10 @@ part of 'list_private_task_response.dart';
 ListPrivateTaskResponse _$ListPrivateTaskResponseFromJson(
         Map<String, dynamic> json) =>
     ListPrivateTaskResponse(
-      (json['tasks'] as List<dynamic>)
-          .map((e) => PrivateTask.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      tasks: (json['tasks'] as List<dynamic>?)
+              ?.map((e) => PrivateTask.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$ListPrivateTaskResponseToJson(

@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 class AddAuditTaskController extends GetxController {
   final ProjectRepository _projectRepository = Get.find();
-  final ExecutorRepository _executorRepository = Get.find();
   final AuditTaskRepository _taskRepository = Get.find();
   final projects = RxList<Project>();
   final executors = RxList<Executor>();
@@ -29,12 +28,6 @@ class AddAuditTaskController extends GetxController {
       }
       projects.addAll(value);
     });
-    _executorRepository.getList().then((value) {
-      if (value == null) {
-        return;
-      }
-      executors.addAll(value);
-    });
     super.onReady();
   }
 
@@ -45,7 +38,6 @@ class AddAuditTaskController extends GetxController {
           endTime: endTime != null
               ? MyDateUtils.format(endTime!, format: "yyyy-MM-dd")
               : null,
-          executorId: executorId,
           projectId: projectId,
           priorityLevel: priority.value,
           description: descriptionController.text,

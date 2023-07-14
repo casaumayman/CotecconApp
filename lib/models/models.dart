@@ -8,6 +8,7 @@ export 'response/list_executor_response.dart';
 export 'response/list_comment_response.dart';
 export 'response/list_private_task_response.dart';
 export 'response/list_audit_task_response.dart';
+export 'response/list_user_response.dart';
 
 export 'task.dart';
 export 'executor.dart';
@@ -17,3 +18,4 @@ export 'image_info.dart';
 export 'comment.dart';
 export 'private_task.dart';
 export 'audit_task.dart';
+export 'user.dart';

@@ -7,7 +7,7 @@ part 'list_audit_task_response.g.dart';
 class ListAuditTaskResponse {
   List<AuditTask> tasks;
 
-  ListAuditTaskResponse(this.tasks);
+  ListAuditTaskResponse({this.tasks = const []});
 
   factory ListAuditTaskResponse.fromJson(Map<String, dynamic> json) =>
       _$ListAuditTaskResponseFromJson(json);

@@ -1,6 +1,6 @@
 @port = 8080
 @host = coteccons.info 
-@token = Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhc3Npc3RhbnQtcHVibGljLWFwaSIsImV4cCI6IjIwMjQtMDEtMDJUMDE6MjM6NDAuODM1OTkzMDE0KzA3OjAwIiwidXNlcl9pZCI6Mn0.zA88KU5PhITf0r0KpZRCK235RPbnhdhuu_rsEsXzuNE
+@token = Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhc3Npc3RhbnQtcHVibGljLWFwaSIsImV4cCI6IjIwMjQtMDEtMTBUMjM6NDc6MTUuMjg2MTQ1NTcxKzA3OjAwIiwidXNlcl9pZCI6MTR9.gs5Epes7Rmm-vGip8V3G169fdBH8DjhQE2pLvpvf5kQ
 @task = tasks
 
 
@@ -12,7 +12,7 @@ POST https://{{host}}/auth HTTP/1.1
 Content-Type: application/json
 {{token}}
 
-{"username":"abc","password":"123456"}
+{"username":"manhdung@gmail.com","password":"123456"}
 
 ############
 # PROJECTS #
@@ -55,3 +55,6 @@ DELETE http://{{host}}/api/v1/{{task}}/8 HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 {{token}}
 ###
+
+GET http://{{host}}/api/v1/users
+{{token}}

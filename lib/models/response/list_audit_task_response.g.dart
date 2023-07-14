@@ -9,9 +9,10 @@ part of 'list_audit_task_response.dart';
 ListAuditTaskResponse _$ListAuditTaskResponseFromJson(
         Map<String, dynamic> json) =>
     ListAuditTaskResponse(
-      (json['tasks'] as List<dynamic>)
-          .map((e) => AuditTask.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      tasks: (json['tasks'] as List<dynamic>?)
+              ?.map((e) => AuditTask.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$ListAuditTaskResponseToJson(

@@ -37,7 +37,8 @@ class ListTask extends GetView<ListTaskController> {
                       .map((task) => TaskWidget(
                             task: task,
                             onTap: () {
-                              Get.toNamed(Routes.TASK_DETAIL, arguments: task);
+                              Get.toNamed(Routes.TASK_DETAIL,
+                                  arguments: task.id);
                             },
                           ))
                       .toList(),

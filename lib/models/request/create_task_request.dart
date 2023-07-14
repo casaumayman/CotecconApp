@@ -9,6 +9,7 @@ class CreateTaskRequest {
   String? unit;
   String priorityLevel;
   String? description;
+  int? parentTaskId;
 
   CreateTaskRequest(
       {this.name,
@@ -20,7 +21,8 @@ class CreateTaskRequest {
       this.unit,
       this.description,
       this.priorityLevel = "low",
-      this.price});
+      this.price,
+      this.parentTaskId});
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
@@ -34,6 +36,7 @@ class CreateTaskRequest {
     data['unit'] = this.unit;
     data['priority_level'] = this.priorityLevel;
     data['description'] = this.description;
+    data['parent_task_id'] = this.parentTaskId;
     return data;
   }
 }

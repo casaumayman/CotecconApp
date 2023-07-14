@@ -16,6 +16,8 @@ enum TaskStatus {
   COMPLETED,
   @JsonValue("created")
   CREATED,
+  @JsonValue("approved")
+  APPROVED,
   @JsonValue("implementing")
   IMPLEMENTING,
   @JsonValue("unknown")
@@ -31,6 +33,17 @@ enum TaskPriority {
   LOW,
   @JsonValue("unknown")
   UNKNOWN
+}
+
+@JsonSerializable()
+class SubTask {
+  int id;
+  String? name;
+
+  SubTask({required this.id, this.name});
+
+  factory SubTask.fromJson(Map<String, dynamic> json) =>
+      _$SubTaskFromJson(json);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake)
@@ -54,6 +67,8 @@ class TaskDetail {
   List<ImageInfo>? ownerImages;
   List<ImageInfo>? executorImages;
   String? unit;
+  SubTask? parentTask;
+  SubTask? childTask;
 
   TaskDetail(
       this.id,

@@ -19,11 +19,11 @@ class BaseAppBar extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              AppBarTitle(
+              Expanded(
+                  child: AppBarTitle(
                 title: title,
-              ),
+              )),
               AppBarAction(
                 title: title,
               )
@@ -99,6 +99,9 @@ class AppBarTitle extends StatelessWidget {
         ],
       );
     }
-    return Image.asset("assets/images/logo-white.png", height: 50);
+    return Container(
+      alignment: Alignment.centerLeft,
+      child: Image.asset("assets/images/logo-white.png", height: 50),
+    );
   }
 }

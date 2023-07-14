@@ -37,6 +37,6 @@ void logout() {
 
 void responseLogger(Response response) {
   debugPrint('Status Code: ${response.statusCode}');
-  debugPrint('Data of ${response.requestOptions.uri}: ${response.data}');
+  debugPrint('Data of ${response.requestOptions.path}: ${response.data}');
   debugPrint('-----------------------------------------------');
 }

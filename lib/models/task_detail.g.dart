@@ -6,6 +6,16 @@ part of 'task_detail.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+SubTask _$SubTaskFromJson(Map<String, dynamic> json) => SubTask(
+      id: json['id'] as int,
+      name: json['name'] as String?,
+    );
+
+Map<String, dynamic> _$SubTaskToJson(SubTask instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+    };
+
 TaskDetail _$TaskDetailFromJson(Map<String, dynamic> json) => TaskDetail(
       json['id'] as int?,
       json['code'] as String?,
@@ -34,7 +44,13 @@ TaskDetail _$TaskDetailFromJson(Map<String, dynamic> json) => TaskDetail(
       json['start_time'] as String?,
       $enumDecode(_$TaskStatusEnumMap, json['status']),
       json['unit'] as String?,
-    );
+    )
+      ..parentTask = json['parent_task'] == null
+          ? null
+          : SubTask.fromJson(json['parent_task'] as Map<String, dynamic>)
+      ..childTask = json['child_task'] == null
+          ? null
+          : SubTask.fromJson(json['child_task'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$TaskDetailToJson(TaskDetail instance) =>
     <String, dynamic>{
@@ -57,6 +73,8 @@ Map<String, dynamic> _$TaskDetailToJson(TaskDetail instance) =>
       'owner_images': instance.ownerImages,
       'executor_images': instance.executorImages,
       'unit': instance.unit,
+      'parent_task': instance.parentTask,
+      'child_task': instance.childTask,
     };
 
 const _$TaskPriorityEnumMap = {
@@ -73,6 +91,7 @@ const _$TaskStatusEnumMap = {
   TaskStatus.CANCELED: 'cancel',
   TaskStatus.COMPLETED: 'completed',
   TaskStatus.CREATED: 'created',
+  TaskStatus.APPROVED: 'approved',
   TaskStatus.IMPLEMENTING: 'implementing',
   TaskStatus.UNKNOWN: 'unknown',
 };

@@ -301,7 +301,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		249021D3217E4FDB00AE95B9 /* Profile */ = {
+		249021D3217E4FDB00AE95B9 /* Profile-ctc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -349,9 +349,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Profile;
+			name = "Profile-ctc";
 		};
-		249021D4217E4FDB00AE95B9 /* Profile */ = {
+		249021D4217E4FDB00AE95B9 /* Profile-ctc */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
@@ -370,9 +370,9 @@
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
-			name = Profile;
+			name = "Profile-ctc";
 		};
-		97C147031CF9000F007C117D /* Debug */ = {
+		97C147031CF9000F007C117D /* Debug-ctc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -425,9 +425,9 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = "Debug-ctc";
 		};
-		97C147041CF9000F007C117D /* Release */ = {
+		97C147041CF9000F007C117D /* Release-ctc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -476,9 +476,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = "Release-ctc";
 		};
-		97C147061CF9000F007C117D /* Debug */ = {
+		97C147061CF9000F007C117D /* Debug-ctc */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
 			buildSettings = {
@@ -498,9 +498,9 @@
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
-			name = Debug;
+			name = "Debug-ctc";
 		};
-		97C147071CF9000F007C117D /* Release */ = {
+		97C147071CF9000F007C117D /* Release-ctc */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
@@ -519,9 +519,9 @@
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
-			name = Release;
+			name = "Release-ctc";
 		};
-		EBB3F3932A58336300E12B24 /* Debug-cons */ = {
+		EBFCAF732A614FA7007AA30A /* Debug-cons */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -576,7 +576,7 @@
 			};
 			name = "Debug-cons";
 		};
-		EBB3F3942A58336300E12B24 /* Debug-cons */ = {
+		EBFCAF742A614FA7007AA30A /* Debug-cons */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
 			buildSettings = {
@@ -598,7 +598,7 @@
 			};
 			name = "Debug-cons";
 		};
-		EBB3F3952A58339800E12B24 /* Release-cons */ = {
+		EBFCAF752A614FB2007AA30A /* Release-cons */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -649,7 +649,7 @@
 			};
 			name = "Release-cons";
 		};
-		EBB3F3962A58339800E12B24 /* Release-cons */ = {
+		EBFCAF762A614FB2007AA30A /* Release-cons */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
@@ -670,7 +670,7 @@
 			};
 			name = "Release-cons";
 		};
-		EBB3F3972A58339F00E12B24 /* Profile-cons */ = {
+		EBFCAF772A614FBA007AA30A /* Profile-cons */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -720,7 +720,7 @@
 			};
 			name = "Profile-cons";
 		};
-		EBB3F3982A58339F00E12B24 /* Profile-cons */ = {
+		EBFCAF782A614FBA007AA30A /* Profile-cons */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
@@ -747,28 +747,28 @@
 		97C146E91CF9000F007C117D /* Build configuration list for PBXProject "Runner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				97C147031CF9000F007C117D /* Debug */,
-				EBB3F3932A58336300E12B24 /* Debug-cons */,
-				97C147041CF9000F007C117D /* Release */,
-				EBB3F3952A58339800E12B24 /* Release-cons */,
-				249021D3217E4FDB00AE95B9 /* Profile */,
-				EBB3F3972A58339F00E12B24 /* Profile-cons */,
+				97C147031CF9000F007C117D /* Debug-ctc */,
+				EBFCAF732A614FA7007AA30A /* Debug-cons */,
+				97C147041CF9000F007C117D /* Release-ctc */,
+				EBFCAF752A614FB2007AA30A /* Release-cons */,
+				249021D3217E4FDB00AE95B9 /* Profile-ctc */,
+				EBFCAF772A614FBA007AA30A /* Profile-cons */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release-ctc";
 		};
 		97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				97C147061CF9000F007C117D /* Debug */,
-				EBB3F3942A58336300E12B24 /* Debug-cons */,
-				97C147071CF9000F007C117D /* Release */,
-				EBB3F3962A58339800E12B24 /* Release-cons */,
-				249021D4217E4FDB00AE95B9 /* Profile */,
-				EBB3F3982A58339F00E12B24 /* Profile-cons */,
+				97C147061CF9000F007C117D /* Debug-ctc */,
+				EBFCAF742A614FA7007AA30A /* Debug-cons */,
+				97C147071CF9000F007C117D /* Release-ctc */,
+				EBFCAF762A614FB2007AA30A /* Release-cons */,
+				249021D4217E4FDB00AE95B9 /* Profile-ctc */,
+				EBFCAF782A614FBA007AA30A /* Profile-cons */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release-ctc";
 		};
 /* End XCConfigurationList section */
 	};

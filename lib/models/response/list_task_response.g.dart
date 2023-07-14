@@ -8,9 +8,10 @@ part of 'list_task_response.dart';
 
 ListTaskResponse _$ListTaskResponseFromJson(Map<String, dynamic> json) =>
     ListTaskResponse(
-      (json['tasks'] as List<dynamic>)
-          .map((e) => Task.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      tasks: (json['tasks'] as List<dynamic>?)
+              ?.map((e) => Task.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$ListTaskResponseToJson(ListTaskResponse instance) =>

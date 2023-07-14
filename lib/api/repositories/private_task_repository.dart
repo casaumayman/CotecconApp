@@ -26,6 +26,14 @@ class PrivateTaskRepository {
     return PrivateTask.fromJson(res.data);
   }
 
+  Future<List<User>?> getUsers() async {
+    final res = await _apiProvider.get('/users');
+    if (res.data == null) {
+      return null;
+    }
+    return (ListUserResponse.fromJson(res.data)).users;
+  }
+
   Future<void> create(CreateTaskRequest body) async {
     await _apiProvider.post('/private-tasks', data: body.toJson());
   }

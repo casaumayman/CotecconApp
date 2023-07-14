@@ -9,7 +9,7 @@ import 'package:image_picker/image_picker.dart';
 
 class TaskDetailController extends GetxController {
   final TaskRepository _taskRepository = Get.find();
-  final Task task = Get.arguments;
+  int taskId = Get.arguments;
   final taskDetail = Rx<TaskDetail?>(null);
   final listComment = RxList<Comment>([]);
 
@@ -28,19 +28,17 @@ class TaskDetailController extends GetxController {
   }
 
   Future<void> fetchData() async {
-    if (task.id == null) {
-      return;
-    }
+    taskId = Get.arguments;
     await Future.wait([fetchInfo(), fetchCemments()]);
   }
 
   Future<void> fetchInfo() async {
-    final taskRes = await _taskRepository.getDetail(task.id!);
+    final taskRes = await _taskRepository.getDetail(taskId);
     taskDetail.value = taskRes;
   }
 
   Future<void> fetchCemments() async {
-    final comments = await _taskRepository.getListComment(task.id!);
+    final comments = await _taskRepository.getListComment(taskId);
     if (comments != null) {
       listComment.clear();
       listComment.addAll(comments);
@@ -48,14 +46,14 @@ class TaskDetailController extends GetxController {
   }
 
   void sendComment(String message) {
-    _taskRepository.sendComment(task.id!, message).then((value) {
+    _taskRepository.sendComment(taskId, message).then((value) {
       fetchCemments();
       commentInputController.text = "";
     });
   }
 
   void changeStatus(TaskStatus status) {
-    _taskRepository.changeStatus(task.id!, status).then((value) {
+    _taskRepository.changeStatus(taskId, status).then((value) {
       fetchInfo();
       CommonWidget.toastSuccess("Thành công!");
     });
@@ -66,7 +64,7 @@ class TaskDetailController extends GetxController {
     final image = await picker.pickImage(source: ImageSource.camera);
     if (image != null) {
       //send image
-      _taskRepository.uploadTaskImage(task.id!, image).then((value) {
+      _taskRepository.uploadTaskImage(taskId, image).then((value) {
         fetchInfo();
         CommonWidget.toastSuccess("Thành công!");
       });

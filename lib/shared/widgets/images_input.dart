@@ -21,7 +21,7 @@ class ImagesInput extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Model.ImageInfo?> renderImages = List.of(images);
     if (!disabled) {
-      renderImages.add(null);
+      renderImages.insert(0, null);
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,28 +33,33 @@ class ImagesInput extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
-        Wrap(
-          direction: Axis.horizontal,
-          spacing: 10,
-          runSpacing: 10,
-          children: renderImages.map((imageInfo) {
-            if (imageInfo != null) {
-              return InkWell(
-                onTap: () {
-                  Get.toNamed(Routes.IMAGE_VIEW, arguments: imageInfo.fullFile);
-                },
-                child: Image.network(
-                  imageInfo.thumbnail!,
-                  fit: BoxFit.cover,
-                  width: 100,
-                  height: 100,
-                ),
+        // Row(children: [], sp)
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Wrap(
+            direction: Axis.horizontal,
+            spacing: 10,
+            runSpacing: 10,
+            children: renderImages.map((imageInfo) {
+              if (imageInfo != null) {
+                return InkWell(
+                  onTap: () {
+                    Get.toNamed(Routes.IMAGE_VIEW,
+                        arguments: imageInfo.fullFile);
+                  },
+                  child: Image.network(
+                    imageInfo.thumbnail!,
+                    fit: BoxFit.cover,
+                    width: 100,
+                    height: 100,
+                  ),
+                );
+              }
+              return ImageInput(
+                onTap: onTap,
               );
-            }
-            return ImageInput(
-              onTap: onTap,
-            );
-          }).toList(),
+            }).toList(),
+          ),
         ),
       ],
     );

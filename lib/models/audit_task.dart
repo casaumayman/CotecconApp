@@ -11,8 +11,6 @@ class AuditTask {
   int? projectId;
   String? projectName;
   Project? project;
-  int? executorId;
-  String? executorName;
   Executor? executor;
   String? startTime;
   String? endTime;
@@ -28,9 +26,7 @@ class AuditTask {
     this.description,
     this.endTime,
     this.executor,
-    this.executorId,
     this.executorImages,
-    this.executorName,
     this.name,
     this.ownerImages,
     this.priorityLevel,

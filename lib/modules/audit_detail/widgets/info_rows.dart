@@ -11,7 +11,6 @@ class InfoRows extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wrap(direction: Axis.horizontal, runSpacing: 10, children: [
       InfoRow(label: "Dự án", value: task?.name ?? ''),
-      InfoRow(label: "NTP/NCC", value: task?.executorName ?? ''),
       InfoRow(label: "Ngày bắt đầu", value: task?.startTime ?? ''),
       InfoRow(label: "Ngày kết thúc", value: task?.endTime ?? ''),
       InfoRow(

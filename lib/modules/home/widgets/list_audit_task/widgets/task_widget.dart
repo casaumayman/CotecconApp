@@ -39,10 +39,6 @@ class TaskWidget extends StatelessWidget {
             SizedBox(
               height: 5,
             ),
-            Text(
-              task.executorName ?? '',
-              style: TextStyle(color: hexToColor("#9095A0")),
-            ),
             SizedBox(
               height: 10,
             ),

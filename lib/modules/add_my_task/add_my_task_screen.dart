@@ -30,10 +30,9 @@ class AddMyTaskScreen extends GetView<AddMyPrivateTaskController> {
             ),
             Obx(() => DropDownInput(
                   items: controller.executors
-                      .map((e) =>
-                          DropdownItem(e.name ?? '', (e.id ?? 0).toString()))
+                      .map((e) => DropdownItem(e.name ?? '', (e.id).toString()))
                       .toList(),
-                  label: "NTP/NCC",
+                  label: "Người thực hiện",
                   onChange: (id) {
                     controller.executorId = int.parse(id);
                   },

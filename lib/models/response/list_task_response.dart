@@ -7,7 +7,7 @@ part 'list_task_response.g.dart';
 class ListTaskResponse {
   List<Task> tasks;
 
-  ListTaskResponse(this.tasks);
+  ListTaskResponse({this.tasks = const []});
 
   factory ListTaskResponse.fromJson(Map<String, dynamic> json) =>
       _$ListTaskResponseFromJson(json);

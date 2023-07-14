@@ -26,12 +26,12 @@ class CustomAppBar extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _AppBarTitle(
+              Expanded(
+                  child: _AppBarTitle(
                 title: title,
-              ),
+              )),
               isHaveAction
                   ? _AppBarAction(
                       title: title,
@@ -89,7 +89,7 @@ class _AppBarTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         IconButton(
@@ -98,11 +98,15 @@ class _AppBarTitle extends StatelessWidget {
             },
             icon: Icon(Icons.arrow_back),
             padding: EdgeInsets.zero),
-        Text(
-          title!,
+        Expanded(
+            child: Text(
+          title ?? "",
           style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
-        )
+              overflow: TextOverflow.ellipsis,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.white),
+        ))
       ],
     );
   }

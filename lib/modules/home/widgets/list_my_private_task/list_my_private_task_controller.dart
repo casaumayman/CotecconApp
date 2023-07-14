@@ -26,7 +26,7 @@ class ListMyPrivateTaskController extends GetxController {
   }
 
   Future<void> goToAddScreen() async {
-    final data = await Get.toNamed(Routes.ADD_TASK);
+    final data = await Get.toNamed(Routes.ADD_MY_PRIVATE_TASK);
     if (data == "success") {
       fetchData();
     }

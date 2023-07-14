@@ -1,4 +1,6 @@
 import 'package:coteccons_app/modules/add_task/add_task_controller.dart';
+import 'package:coteccons_app/modules/add_task/widgets/add_parent_task.dart';
+import 'package:coteccons_app/modules/add_task/widgets/project_input.dart';
 import 'package:flutter/material.dart';
 import 'package:coteccons_app/shared/shared.dart';
 import 'package:get/get.dart';
@@ -10,21 +12,15 @@ class AddTaskScreen extends GetView<AddTaskController> {
   Widget build(BuildContext context) {
     return BaseScreen(
       resizeToAvoidBottomInset: true,
-      title: "Thêm công việc",
+      title: controller.parentTask != null
+          ? "Thêm công việc con"
+          : "Thêm công việc",
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Obx(() => DropDownInput(
-                  items: controller.projects
-                      .map((p) =>
-                          DropdownItem(p.name ?? '', (p.id ?? 0).toString()))
-                      .toList(),
-                  label: "Dự án",
-                  onChange: (id) {
-                    controller.projectId = int.parse(id);
-                  },
-                )),
+            ParentTaskInput(),
+            ProjectInput(),
             SizedBox(
               height: 10,
             ),

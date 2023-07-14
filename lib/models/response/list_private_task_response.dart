@@ -7,7 +7,7 @@ part 'list_private_task_response.g.dart';
 class ListPrivateTaskResponse {
   List<PrivateTask> tasks;
 
-  ListPrivateTaskResponse(this.tasks);
+  ListPrivateTaskResponse({this.tasks = const []});
 
   factory ListPrivateTaskResponse.fromJson(Map<String, dynamic> json) =>
       _$ListPrivateTaskResponseFromJson(json);

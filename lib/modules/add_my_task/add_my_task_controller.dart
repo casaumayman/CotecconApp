@@ -6,10 +6,9 @@ import 'package:get/get.dart';
 
 class AddMyPrivateTaskController extends GetxController {
   final ProjectRepository _projectRepository = Get.find();
-  final ExecutorRepository _executorRepository = Get.find();
-  final AuditTaskRepository _taskRepository = Get.find();
+  final PrivateTaskRepository _privateTaskRepository = Get.find();
   final projects = RxList<Project>();
-  final executors = RxList<Executor>();
+  final executors = RxList<User>();
   final priority = "high".obs;
 
   var projectId = 0;
@@ -32,7 +31,7 @@ class AddMyPrivateTaskController extends GetxController {
       }
       projects.addAll(value);
     });
-    _executorRepository.getList().then((value) {
+    _privateTaskRepository.getUsers().then((value) {
       if (value == null) {
         return;
       }
@@ -43,7 +42,7 @@ class AddMyPrivateTaskController extends GetxController {
 
   void createTask() async {
     try {
-      await _taskRepository.create(CreateTaskRequest(
+      await _privateTaskRepository.create(CreateTaskRequest(
           name: taskNameController.text,
           endTime: endTime != null
               ? MyDateUtils.format(endTime!, format: "yyyy-MM-dd")

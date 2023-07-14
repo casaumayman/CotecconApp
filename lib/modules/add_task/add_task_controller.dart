@@ -11,6 +11,7 @@ class AddTaskController extends GetxController {
   final projects = RxList<Project>();
   final executors = RxList<Executor>();
   final priority = "high".obs;
+  final TaskDetail? parentTask = Get.arguments;
 
   var projectId = 0;
   var executorId = 0;
@@ -23,6 +24,7 @@ class AddTaskController extends GetxController {
   final quantityController = TextEditingController();
   final priceController = TextEditingController();
   final descriptionController = TextEditingController();
+  final parentIdController = TextEditingController();
 
   @override
   void onReady() {
@@ -38,6 +40,9 @@ class AddTaskController extends GetxController {
       }
       executors.addAll(value);
     });
+    if (parentTask?.projectId != null) {
+      projectId = parentTask!.projectId!;
+    }
     super.onReady();
   }
 
@@ -55,6 +60,7 @@ class AddTaskController extends GetxController {
           quantity: int.parse(quantityController.text),
           priorityLevel: priority.value,
           description: descriptionController.text,
+          parentTaskId: parentTask?.id,
           startTime: startTime != null
               ? MyDateUtils.format(startTime!, format: "yyyy-MM-dd")
               : null));

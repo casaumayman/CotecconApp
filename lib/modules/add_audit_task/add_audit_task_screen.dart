@@ -28,19 +28,6 @@ class AddAuditTaskScreen extends GetView<AddAuditTaskController> {
             SizedBox(
               height: 10,
             ),
-            Obx(() => DropDownInput(
-                  items: controller.executors
-                      .map((e) =>
-                          DropdownItem(e.name ?? '', (e.id ?? 0).toString()))
-                      .toList(),
-                  label: "NTP/NCC",
-                  onChange: (id) {
-                    controller.executorId = int.parse(id);
-                  },
-                )),
-            SizedBox(
-              height: 10,
-            ),
             TextInput(
               label: "Tên công việc",
               controller: controller.taskNameController,
