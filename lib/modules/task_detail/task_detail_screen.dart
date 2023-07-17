@@ -19,13 +19,11 @@ class TaskDetailScreen extends GetView<TaskDetailController> {
       final comments = controller.listComment.toList();
 
       return BaseScreen(
-        appBar: controller.isCTCApp.isTrue
-            ? CustomAppBar(
-                title: controller.taskDetail.value?.name ?? "",
-                actionIcon: Icon(Icons.edit),
-                actionLabel: "Sửa công việc",
-                onAction: controller.gotoEdit)
-            : null,
+        appBar: CustomAppBar(
+            title: controller.taskDetail.value?.name ?? "",
+            actionIcon: Icon(Icons.edit),
+            actionLabel: "Sửa công việc",
+            onAction: controller.gotoEdit),
         title: controller.taskDetail.value?.name,
         child: RefreshIndicator(
           onRefresh: controller.fetchData,
@@ -37,13 +35,13 @@ class TaskDetailScreen extends GetView<TaskDetailController> {
                 ImagesInput(
                   label: "Ảnh từ CTC",
                   images: listImgOwner,
-                  disabled: controller.isCTCApp.isFalse,
+                  disabled: false,
                   onTap: controller.openCamera,
                 ),
                 ImagesInput(
                   label: "Ảnh từ constructor",
                   images: listImgExec,
-                  disabled: controller.isCTCApp.isTrue,
+                  disabled: true,
                   onTap: controller.openCamera,
                 ),
                 Comments(commemts: comments),

@@ -18,11 +18,9 @@ class ListTask extends GetView<ListTaskController> {
             "Công việc",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
-          Obx(() => controller.isCTCApp.value
-              ? AddTaskButton(
-                  onPress: controller.goToAddScreen,
-                )
-              : SizedBox()),
+          AddTaskButton(
+            onPress: controller.goToAddScreen,
+          ),
         ],
       ),
       Expanded(

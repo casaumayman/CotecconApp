@@ -6,7 +6,7 @@ import 'package:coteccons_app/shared/shared.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-class TaskDetailController extends GetxController {
+class ConsTaskDetailController extends GetxController {
   final TaskRepository _taskRepository = Get.find();
   int taskId = Get.arguments;
   final taskDetail = Rx<TaskDetail?>(null);

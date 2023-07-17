@@ -7,6 +7,7 @@ import 'auth_controller.dart';
 class LoginScreen extends GetView<AuthController> {
   @override
   Widget build(BuildContext context) {
+    // return SizedBox();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -19,7 +20,11 @@ class LoginScreen extends GetView<AuthController> {
                   child: Image.asset("assets/images/logo.png"),
                 )),
             LoginForm(),
-            Spacer(
+            // Spacer(
+            //   flex: 1,
+            // )
+            Expanded(
+              child: SizedBox(),
               flex: 1,
             )
           ],
