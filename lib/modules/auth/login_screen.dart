@@ -9,25 +9,32 @@ class LoginScreen extends GetView<AuthController> {
   Widget build(BuildContext context) {
     // return SizedBox();
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Expanded(
-                flex: 2,
-                child: Center(
-                  child: Image.asset("assets/images/logo.png"),
-                )),
-            LoginForm(),
-            // Spacer(
-            //   flex: 1,
-            // )
-            Expanded(
-              child: SizedBox(),
-              flex: 1,
-            )
-          ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                    flex: 2,
+                    child: Center(
+                      child: Image.asset("assets/images/logo.png"),
+                    )),
+                LoginForm(),
+                // Spacer(
+                //   flex: 1,
+                // )
+                Expanded(
+                  child: SizedBox(),
+                  flex: 1,
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );
