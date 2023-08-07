@@ -1,8 +1,9 @@
 import 'package:coteccons_app/routes/app_pages.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:coteccons_app/api/api.dart';
 import 'package:coteccons_app/models/models.dart';
 import 'package:coteccons_app/shared/shared.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -46,10 +47,38 @@ class TaskDetailController extends GetxController {
   }
 
   void changeStatus(TaskStatus status) {
-    _taskRepository.changeStatus(taskId, status).then((value) {
-      fetchInfo();
-      CommonWidget.toastSuccess("Thành công!");
-    });
+    var star = 0;
+    Get.dialog(AlertDialog(
+      title: Text("Đánh giá"),
+      actions: [
+        ElevatedButton(
+            onPressed: () {
+              _taskRepository.changeStatus(taskId, status, star).then((value) {
+                fetchInfo();
+                CommonWidget.toastSuccess("Thành công!");
+              });
+              Get.back();
+            },
+            child: Text("OK"))
+      ],
+      content: Container(
+        alignment: Alignment.center,
+        height: 40,
+        child: RatingBar.builder(
+          onRatingUpdate: (count) {
+            star = count.toInt();
+          },
+          allowHalfRating: false,
+          direction: Axis.horizontal,
+          minRating: 1,
+          maxRating: 5,
+          itemBuilder: (context, _) => Icon(
+            Icons.star,
+            color: Colors.amber,
+          ),
+        ),
+      ),
+    ));
   }
 
   void openCamera() async {
@@ -62,6 +91,32 @@ class TaskDetailController extends GetxController {
         CommonWidget.toastSuccess("Thành công!");
       });
     }
+  }
+
+  void remind() async {
+    var remindMessage = "";
+    Get.dialog(AlertDialog(
+      title: Text("Nhắc nhở"),
+      actions: [
+        ElevatedButton(
+            onPressed: () {
+              _taskRepository.remind(taskId, remindMessage).then((value) {
+                CommonWidget.toastSuccess("Thành công!");
+              });
+              Get.back();
+            },
+            child: Text("OK"))
+      ],
+      content: Container(
+        child: TextField(
+            autofocus: true,
+            maxLines: 5,
+            onChanged: (v) {
+              remindMessage = v;
+            },
+            decoration: InputDecoration(border: OutlineInputBorder())),
+      ),
+    ));
   }
 
   void gotoEdit() async {

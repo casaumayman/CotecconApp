@@ -40,9 +40,11 @@ class TaskRepository {
     await _apiProvider.post('/tasks/$id/comments', data: {"msg": message});
   }
 
-  Future<void> changeStatus(int id, TaskStatus status) async {
-    await _apiProvider.patch('/tasks/$id',
-        data: {"status": TaskStatusUtils.toStringJson(status)});
+  Future<void> changeStatus(int id, TaskStatus status, int? star) async {
+    final data = star != null
+        ? {"status": TaskStatusUtils.toStringJson(status), "star": star}
+        : {"status": TaskStatusUtils.toStringJson(status)};
+    await _apiProvider.patch('/tasks/$id', data: data);
   }
 
   Future<void> uploadTaskImage(int id, XFile xFile) async {
@@ -51,5 +53,10 @@ class TaskRepository {
     await _apiProvider.post('/tasks/$id/images',
         data: formData,
         options: Options(headers: {"Content-Type": "multipart/form-data"}));
+  }
+
+  Future<void> remind(int taskID, String message) async {
+    await _apiProvider
+        .post('/tasks/$taskID/remind', data: {"message": message});
   }
 }

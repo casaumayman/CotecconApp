@@ -46,7 +46,7 @@ class ConsTaskDetailController extends GetxController {
   }
 
   void changeStatus(TaskStatus status) {
-    _taskRepository.changeStatus(taskId, status).then((value) {
+    _taskRepository.changeStatus(taskId, status, null).then((value) {
       fetchInfo();
       CommonWidget.toastSuccess("Thành công!");
     });

@@ -14,7 +14,7 @@ void main() async {
   await DenpendencyInjection.init();
   final flavor = await FlavorUtil.getFlavor();
   runApp(App(
-    flavor: flavor!,
+    flavor: flavor ?? Flavor.CTC,
   ));
   configLoading();
 }

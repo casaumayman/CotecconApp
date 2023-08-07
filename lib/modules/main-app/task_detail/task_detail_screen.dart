@@ -52,6 +52,17 @@ class TaskDetailScreen extends GetView<TaskDetailController> {
                 // SizedBox(
                 //   height: 30,
                 // ),
+                Container(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        controller.remind();
+                      },
+                      child: Text("NHẮC NHỞ")),
+                  width: double.infinity,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
                 SafeArea(
                     top: false,
                     child: Row(

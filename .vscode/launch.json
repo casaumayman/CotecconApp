@@ -14,6 +14,13 @@
       "type": "dart",
       "program": "lib/main.dart",
       "args": ["--flavor", "cons", "--target", "lib/main.dart" ]
+    },
+    {
+      "name": "IOS CTC",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--target", "lib/main.dart" ]
     }
   ],
   "compounds": []
