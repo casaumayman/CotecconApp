@@ -11,6 +11,11 @@ SubTask _$SubTaskFromJson(Map<String, dynamic> json) => SubTask(
       name: json['name'] as String?,
     );
 
+Map<String, dynamic> _$SubTaskToJson(SubTask instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+    };
+
 TaskDetail _$TaskDetailFromJson(Map<String, dynamic> json) => TaskDetail(
       json['id'] as int?,
       json['code'] as String?,

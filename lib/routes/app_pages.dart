@@ -70,5 +70,9 @@ class AppPages {
       name: Routes.IMAGE_VIEW,
       page: () => ImageViewScreen(),
     ),
+    GetPage(
+        name: Routes.NOTIFICATION_DETAIL,
+        page: () => NotificationDetailScreen(),
+        binding: NotificationDetailBinding()),
   ];
 }

@@ -12,4 +12,5 @@ abstract class Routes {
   static const AUDIT_TASK_DETAIL = '/audit-task-detail';
   static const IMAGE_VIEW = '/image-view';
   static const UPDATE_TASK = '/update-task';
+  static const NOTIFICATION_DETAIL = '/notification-detail';
 }

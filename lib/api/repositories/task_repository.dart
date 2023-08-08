@@ -15,6 +15,12 @@ class TaskRepository {
     return resModel.tasks;
   }
 
+  Future<List<Task>?> getImportantList() async {
+    final res = await _apiProvider.get('/important-tasks');
+    final resModel = ListTaskResponse.fromJson(res.data);
+    return resModel.tasks;
+  }
+
   Future<TaskDetail?> getDetail(int id) async {
     final res = await _apiProvider.get('/tasks/$id');
     return TaskDetail.fromJson(res.data);

@@ -12,5 +12,6 @@ class AppBinding extends Bindings {
     Get.put(AuditTaskRepository(), permanent: true);
     Get.put(ProjectRepository(), permanent: true);
     Get.put(ExecutorRepository(), permanent: true);
+    Get.put(NotificationRepository(), permanent: true);
   }
 }

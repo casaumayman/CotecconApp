@@ -13,3 +13,4 @@ export 'main-app/private_task_detail/task_detail.dart';
 
 export 'constructor-app/cons_home/cons_home.dart';
 export 'constructor-app/cons_task_detail/cons_task_detail.dart';
+export 'constructor-app/notification_detail/notification_detail.dart';
