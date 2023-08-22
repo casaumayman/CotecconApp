@@ -1,7 +1,7 @@
+import 'package:coteccons_app/shared/widgets/base_screen/add_task_button.dart';
+import 'package:coteccons_app/shared/widgets/base_screen/user_popup_menu.dart';
 import 'package:flutter/material.dart';
-import 'package:coteccons_app/routes/routes.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class BaseAppBar extends StatelessWidget {
   const BaseAppBar({super.key, this.title});
@@ -41,29 +41,18 @@ class AppBarAction extends StatelessWidget {
 
   final String? title;
 
-  void _onLogout() {
-    var storage = Get.find<SharedPreferences>();
-    storage.remove("token");
-    Get.offNamed(Routes.LOGIN);
-  }
-
   @override
   Widget build(BuildContext context) {
     if (title == null) {
-      return InkWell(
-        onTap: _onLogout,
-        child: Row(
-          children: [
-            Icon(Icons.logout),
-            SizedBox(
-              width: 10,
-            ),
-            Text(
-              "Đăng xuất",
-              style: TextStyle(color: Colors.white),
-            )
-          ],
-        ),
+      return Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          AddTaskButton(),
+          SizedBox(
+            width: 10,
+          ),
+          UserPopupMenu(),
+        ],
       );
     }
     return SizedBox();

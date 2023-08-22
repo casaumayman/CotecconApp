@@ -13,4 +13,9 @@ class AuthRepository {
     final res = await apiProvider.post('/auth', data: data.toJson());
     return LoginResponse.fromJson(res.data);
   }
+
+  Future<User?> getUserInfo() async {
+    final res = await apiProvider.get('/me');
+    return User.fromJson(res.data);
+  }
 }

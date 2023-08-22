@@ -3,13 +3,9 @@ import 'package:coteccons_app/shared/shared.dart';
 
 class TextInput extends StatelessWidget {
   const TextInput(
-      {super.key,
-      required this.label,
-      this.value,
-      this.controller,
-      this.enabled});
+      {super.key, this.label, this.value, this.controller, this.enabled});
 
-  final String label;
+  final String? label;
   final String? value;
   final TextEditingController? controller;
   final bool? enabled;
@@ -23,11 +19,13 @@ class TextInput extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          label,
-          style: TextStyle(
-              color: hexToColor("#171A1F"), fontWeight: FontWeight.bold),
-        ),
+        label != null
+            ? Text(
+                label!,
+                style: TextStyle(
+                    color: hexToColor("#171A1F"), fontWeight: FontWeight.bold),
+              )
+            : SizedBox(),
         Container(
           height: 40,
           padding: EdgeInsets.zero,

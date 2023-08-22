@@ -87,6 +87,12 @@ class ThemeConfig {
         ),
         fontFamily: 'Rubik',
         unselectedWidgetColor: hexToColor('#DADCDD'),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+            style: ButtonStyle(
+                textStyle: MaterialStateProperty.all(
+                    TextStyle(color: hexToColor("#01BEB7"))),
+                side: MaterialStateProperty.all(
+                    BorderSide(color: hexToColor("#01BEB7"))))),
         elevatedButtonTheme: ElevatedButtonThemeData(
             style: ButtonStyle(
                 backgroundColor:

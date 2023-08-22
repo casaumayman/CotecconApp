@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:coteccons_app/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:coteccons_app/api/api.dart';
 import 'package:coteccons_app/models/models.dart';
@@ -31,8 +34,13 @@ class AuthController extends GetxController {
             password: loginPasswordController.text));
         if (res?.token != null) {
           final prefs = Get.find<SharedPreferences>();
-          prefs.setString("token", res!.token);
-          Get.toNamed(Routes.HOME);
+          prefs.setString(StorageConstants.token, res!.token);
+          final user = await authRepository.getUserInfo();
+          if (user != null) {
+            prefs.setString(
+                StorageConstants.userInfo, jsonEncode(user.toJson()));
+          }
+          Get.offNamed(Routes.HOME);
         }
       } catch (e) {}
     }

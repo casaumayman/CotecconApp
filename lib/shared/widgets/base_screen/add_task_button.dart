@@ -1,18 +1,19 @@
+import 'package:coteccons_app/shared/widgets/base_screen/add_task_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:coteccons_app/shared/shared.dart';
+import 'package:get/get.dart';
 
 class AddTaskButton extends StatelessWidget {
-  const AddTaskButton(
-      {super.key, required this.onPress, this.label = "Thêm công việc"});
-
-  final void Function()? onPress;
-  final String label;
+  const AddTaskButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Color color = hexToColor("#01BEB7");
+    Color color = Colors.white;
     return OutlinedButton(
-      onPressed: onPress,
+      onPressed: () {
+        Get.dialog(AddtaskDialog(), barrierDismissible: false);
+      },
+      style: ButtonStyle(
+          side: MaterialStateProperty.all(BorderSide(color: color))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -24,7 +25,7 @@ class AddTaskButton extends StatelessWidget {
               width:
                   5), // Adjust the spacing between the icon and the button text
           Text(
-            label,
+            "Thêm việc",
             style: TextStyle(color: color),
           ), // Replace 'Add' with your desired button text
         ],

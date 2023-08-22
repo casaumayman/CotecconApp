@@ -1,5 +1,5 @@
 {
-  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  "dart.flutterSdkPath": "/Users/casaumayman/development/flutter/",
   //Eliminar archivos .fvm de búsqueda
   "search.exclude": {
     "**/.fvm": true

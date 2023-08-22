@@ -4,6 +4,7 @@ import 'package:coteccons_app/modules/main-app/home/widgets/list_audit_task/list
 import 'package:coteccons_app/modules/main-app/home/widgets/list_my_private_task/list_my_private_task.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/list_private_task/list_private_task.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/list_task/list_task.dart';
+import 'package:coteccons_app/modules/main-app/home/widgets/tool_bar.dart';
 import 'package:coteccons_app/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,18 @@ class HomeScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
-      child: Obx(() => _widgetMapping[controller.currentTabIndex.value]),
+      child: Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ToolBar(),
+            SizedBox(
+              height: 10,
+            ),
+            Expanded(
+                child:
+                    Obx(() => _widgetMapping[controller.currentTabIndex.value]))
+          ]),
       bottomNavigationBar: BottomTab(),
     );
   }

@@ -1,4 +1,3 @@
-import 'package:coteccons_app/modules/main-app/home/widgets/add_task_button.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/list_my_private_task/list_my_private_task_controller.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/list_my_private_task/widgets/task_widget.dart';
 import 'package:flutter/material.dart';
@@ -10,19 +9,6 @@ class ListMyPrivateTask extends GetView<ListMyPrivateTaskController> {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            "Công việc",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-          ),
-          AddTaskButton(
-            onPress: controller.goToAddScreen,
-          ),
-        ],
-      ),
       Expanded(
         child: SafeArea(
           top: false,
