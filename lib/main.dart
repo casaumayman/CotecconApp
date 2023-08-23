@@ -35,7 +35,7 @@ class App extends StatelessWidget {
       getPages: isCTCApp ? AppPages.routes : AppPages.consRoutes,
       initialBinding: AppBinding(),
       smartManagement: SmartManagement.keepFactory,
-      title: "Coteccons",
+      title: flavor == Flavor.CTC ? "VnTask" : "VnTask Partner",
       theme: ThemeConfig.lightTheme,
       builder: EasyLoading.init(),
     );

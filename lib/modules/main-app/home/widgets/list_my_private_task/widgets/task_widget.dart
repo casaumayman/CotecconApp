@@ -5,7 +5,7 @@ import 'package:coteccons_app/shared/shared.dart';
 class TaskWidget extends StatelessWidget {
   const TaskWidget({super.key, required this.task, required this.onTap});
 
-  final PrivateTask task;
+  final TaskDetail task;
   final void Function() onTap;
 
   @override
@@ -40,7 +40,7 @@ class TaskWidget extends StatelessWidget {
               height: 5,
             ),
             Text(
-              task.executorName ?? '',
+              task.executor?.name ?? '',
               style: TextStyle(color: hexToColor("#9095A0")),
             ),
             SizedBox(

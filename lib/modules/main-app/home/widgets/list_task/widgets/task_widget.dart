@@ -10,10 +10,16 @@ class TaskWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final backgroundColor = task.status == TaskStatus.IMPLEMENTING
+        ? (task.priorityLevel == TaskPriority.HIGH
+            ? hexToColor("#f8cecc")
+            : hexToColor("##fff2cc"))
+        : hexToColor("#f5f5f5");
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
-        color: hexToColor("#F9FBFC"),
+        color: backgroundColor,
+        // color: Colors.red,
         borderRadius: BorderRadius.circular(6),
       ),
       child: InkWell(
@@ -40,7 +46,7 @@ class TaskWidget extends StatelessWidget {
               height: 5,
             ),
             Text(
-              task.executorName ?? '',
+              task.executor?.name ?? '',
               style: TextStyle(color: hexToColor("#9095A0")),
             ),
             SizedBox(

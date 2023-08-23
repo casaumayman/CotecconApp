@@ -21,7 +21,7 @@ class BottomTab extends GetView<HomeController> {
                 icon: Icon(
                   Icons.public,
                 ),
-                label: "Công cộng"),
+                label: "Giao việc"),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.account_box,

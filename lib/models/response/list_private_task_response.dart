@@ -5,7 +5,7 @@ part 'list_private_task_response.g.dart';
 
 @JsonSerializable()
 class ListPrivateTaskResponse {
-  List<PrivateTask> tasks;
+  List<TaskDetail> tasks;
 
   ListPrivateTaskResponse({this.tasks = const []});
 

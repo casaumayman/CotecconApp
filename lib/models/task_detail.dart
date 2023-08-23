@@ -44,6 +44,8 @@ class SubTask {
 
   factory SubTask.fromJson(Map<String, dynamic> json) =>
       _$SubTaskFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SubTaskToJson(this);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake)
@@ -54,42 +56,50 @@ class TaskDetail {
   int? projectId;
   String? projectName;
   Project? project;
-  int? executorId;
-  String? executorName;
-  Executor? executor;
+  User? creator;
+  User? executor;
+  User? reporter;
+  User? acceptor;
   String? startTime;
   String? endTime;
   int? quantity;
   int? price;
+  String? unit;
   String? description;
+  TaskStatus? status;
   TaskPriority? priorityLevel;
-  TaskStatus status;
+  int? star;
   List<ImageInfo>? ownerImages;
   List<ImageInfo>? executorImages;
-  String? unit;
+  List<Comment>? comments;
   SubTask? parentTask;
   SubTask? childTask;
 
   TaskDetail(
-      this.id,
+      {this.id,
       this.code,
-      this.description,
-      this.endTime,
-      this.executor,
-      this.executorId,
-      this.executorImages,
-      this.executorName,
       this.name,
-      this.ownerImages,
-      this.price,
-      this.priorityLevel,
-      this.project,
       this.projectId,
       this.projectName,
-      this.quantity,
+      this.project,
+      this.creator,
+      this.executor,
+      this.reporter,
+      this.acceptor,
       this.startTime,
+      this.endTime,
+      this.quantity,
+      this.price,
+      this.unit,
+      this.description,
       this.status,
-      this.unit);
+      this.priorityLevel,
+      this.star,
+      this.ownerImages,
+      this.executorImages,
+      this.parentTask,
+      this.childTask,
+      this.comments});
 
   factory TaskDetail.fromJson(Map<String, dynamic> json) =>
       _$TaskDetailFromJson(json);

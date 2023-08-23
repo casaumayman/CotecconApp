@@ -1,3 +1,4 @@
+import 'package:coteccons_app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -33,7 +34,6 @@ class AddtaskDialog extends StatelessWidget {
       actions: [
         TextButton(
             onPressed: () {
-              // _value.value = AddTaskType.public;
               Get.back();
             },
             child: Text(
@@ -42,6 +42,11 @@ class AddtaskDialog extends StatelessWidget {
         TextButton(
             onPressed: () {
               Get.back();
+              if (_value.value == AddTaskType.public) {
+                Get.toNamed(Routes.ADD_TASK);
+              } else {
+                Get.toNamed(Routes.ADD_MY_PRIVATE_TASK);
+              }
             },
             child: Text("OK")),
       ],

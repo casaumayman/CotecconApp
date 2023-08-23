@@ -9,7 +9,7 @@ class AddTaskController extends GetxController {
   final ExecutorRepository _executorRepository = Get.find();
   final TaskRepository _taskRepository = Get.find();
   final projects = RxList<Project>();
-  final executors = RxList<Executor>();
+  final executors = RxList<User>();
   final priority = "high".obs;
   final TaskDetail? parentTask = Get.arguments;
 

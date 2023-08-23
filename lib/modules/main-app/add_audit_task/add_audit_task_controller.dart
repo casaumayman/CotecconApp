@@ -8,7 +8,7 @@ class AddAuditTaskController extends GetxController {
   final ProjectRepository _projectRepository = Get.find();
   final AuditTaskRepository _taskRepository = Get.find();
   final projects = RxList<Project>();
-  final executors = RxList<Executor>();
+  final executors = RxList<User>();
   final priority = "high".obs;
 
   var projectId = 0;

@@ -11,7 +11,7 @@ class AuditTask {
   int? projectId;
   String? projectName;
   Project? project;
-  Executor? executor;
+  User? executor;
   String? startTime;
   String? endTime;
   String? description;

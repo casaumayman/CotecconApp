@@ -10,7 +10,7 @@ ListExecutorResponse _$ListExecutorResponseFromJson(
         Map<String, dynamic> json) =>
     ListExecutorResponse(
       (json['executors'] as List<dynamic>)
-          .map((e) => Executor.fromJson(e as Map<String, dynamic>))
+          .map((e) => User.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

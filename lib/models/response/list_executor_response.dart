@@ -5,7 +5,7 @@ part 'list_executor_response.g.dart';
 
 @JsonSerializable()
 class ListExecutorResponse {
-  List<Executor> executors;
+  List<User> executors;
 
   ListExecutorResponse(this.executors);
 

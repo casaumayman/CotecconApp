@@ -41,12 +41,17 @@ Content-Type: application/json
 ###
 
 # Read
-GET http://{{host}}/api/v1/{{task}}/17 HTTP/1.1
+GET http://{{host}}/api/v1/{{task}}/28 HTTP/1.1
 {{token}}
 ###
 
 # Read list
 GET http://{{host}}/api/v1/{{task}} HTTP/1.1
+{{token}}
+###
+
+# Read list assigning
+GET http://{{host}}/api/v1/home/assigning-tasks HTTP/1.1
 {{token}}
 ###
 

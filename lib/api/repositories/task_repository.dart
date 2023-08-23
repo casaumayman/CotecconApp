@@ -10,7 +10,7 @@ class TaskRepository {
   final Dio _apiProvider = Getx.Get.find();
 
   Future<List<Task>?> getList() async {
-    final res = await _apiProvider.get('/tasks');
+    final res = await _apiProvider.get('/home/assigning-tasks');
     final resModel = ListTaskResponse.fromJson(res.data);
     return resModel.tasks;
   }

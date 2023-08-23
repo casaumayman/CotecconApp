@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class ListPrivateTaskController extends GetxController {
   final _privateTaskRepository = Get.find<PrivateTaskRepository>();
-  final tasks = RxList<PrivateTask>();
+  final tasks = RxList<TaskDetail>();
   // final isCTCApp = false.obs;
 
   @override

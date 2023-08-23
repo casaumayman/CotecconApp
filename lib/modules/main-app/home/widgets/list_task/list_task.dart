@@ -19,7 +19,18 @@ class ListTask extends GetView<ListTaskController> {
                     .map((task) => TaskWidget(
                           task: task,
                           onTap: () {
-                            Get.toNamed(Routes.TASK_DETAIL, arguments: task.id);
+                            if ((task.publicId ?? 0) != 0) {
+                              Get.toNamed(Routes.TASK_DETAIL,
+                                  arguments: task.publicId);
+                              return;
+                            }
+                            if ((task.privateId ?? 0) != 0) {
+                              Get.toNamed(Routes.PRIVATE_TASK_DETAIL,
+                                  arguments: {"task": task, "isOwn": true});
+                              return;
+                            }
+                            Get.toNamed(Routes.TASK_DETAIL,
+                                arguments: task.publicId);
                           },
                         ))
                     .toList(),

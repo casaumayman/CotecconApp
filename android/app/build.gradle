@@ -69,13 +69,13 @@ android {
     productFlavors {
         ctc {
             dimension "appType"
-            resValue "string", "app_name", "Coteccons"
+            resValue "string", "app_name", "VnTask"
             applicationId "coteccon.tuanhuynh.demo"
         }
 
         cons {
             dimension "appType"
-            resValue "string", "app_name", "Coteccons Constructor"
+            resValue "string", "app_name", "VnTask Partner"
             applicationId "coteccon.tuanhuynh.cons_demo"
         }
     }

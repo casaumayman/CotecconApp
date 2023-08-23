@@ -8,22 +8,22 @@ class PrivateTaskRepository {
   PrivateTaskRepository();
   final Dio _apiProvider = Getx.Get.find();
 
-  Future<List<PrivateTask>?> getList() async {
+  Future<List<TaskDetail>?> getList() async {
     final res = await _apiProvider.get('/private-tasks');
     final resModel = ListPrivateTaskResponse.fromJson(res.data);
     return resModel.tasks;
   }
 
-  Future<List<PrivateTask>?> getMyList() async {
+  Future<List<TaskDetail>?> getMyList() async {
     final res = await _apiProvider
         .get('/private-tasks', queryParameters: {"filter": "my-tasks"});
     final resModel = ListPrivateTaskResponse.fromJson(res.data);
     return resModel.tasks;
   }
 
-  Future<PrivateTask?> getDetail(int id) async {
+  Future<TaskDetail?> getDetail(int id) async {
     final res = await _apiProvider.get('/private-tasks/$id');
-    return PrivateTask.fromJson(res.data);
+    return TaskDetail.fromJson(res.data);
   }
 
   Future<List<User>?> getUsers() async {

@@ -32,6 +32,6 @@ flutter:
   uses-material-design: true
 flutter_launcher_icons:
   android: true
-  image_path: assets/images/app_icon.jpg
+  image_path: assets/images/app_icon.jpeg
   ios: true
   min_sdk_android: 21

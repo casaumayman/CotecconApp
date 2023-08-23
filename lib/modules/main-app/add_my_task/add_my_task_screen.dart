@@ -10,7 +10,7 @@ class AddMyTaskScreen extends GetView<AddMyPrivateTaskController> {
   Widget build(BuildContext context) {
     return BaseScreen(
       resizeToAvoidBottomInset: true,
-      title: "Thêm công việc",
+      title: "Thêm việc nội bộ",
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

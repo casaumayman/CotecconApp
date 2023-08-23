@@ -12,7 +12,7 @@ class UpdateTaskController extends GetxController {
   final TaskDetail taskDetail = Get.arguments;
 
   final projects = RxList<Project>();
-  final executors = RxList<Executor>();
+  final executors = RxList<User>();
   final priority = "high".obs;
   final projectId = Rx<int?>(null);
   final executorId = Rx<int?>(null);
@@ -30,7 +30,7 @@ class UpdateTaskController extends GetxController {
     final serverData = await Future.wait(
         [_projectRepository.getList(), _executorRepository.getList()]);
     projects.addAll((serverData[0] as List<Project>?) ?? []);
-    executors.addAll((serverData[1] as List<Executor>?) ?? []);
+    executors.addAll((serverData[1] as List<User>?) ?? []);
     _initValue();
     super.onReady();
   }

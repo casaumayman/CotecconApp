@@ -6,7 +6,7 @@ class ExecutorRepository {
   ExecutorRepository();
   final Dio apiProvider = Get.find();
 
-  Future<List<Executor>?> getList() async {
+  Future<List<User>?> getList() async {
     final res = await apiProvider.get('/executors');
     final resModel = ListExecutorResponse.fromJson(res.data);
     return resModel.executors;

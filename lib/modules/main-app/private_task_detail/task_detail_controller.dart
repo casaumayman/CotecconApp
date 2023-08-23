@@ -8,10 +8,10 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class PrivateTaskDetailController extends GetxController {
-  final PrivateTaskRepository _taskRepository = Get.find();
-  final PrivateTask task = Get.arguments["task"];
+  final PrivateTaskRepository _privateTaskRepository = Get.find();
+  final Task task = Get.arguments["task"];
   final bool isOwn = Get.arguments['isOwn'];
-  final taskDetail = Rx<PrivateTask?>(null);
+  final taskDetail = Rx<TaskDetail?>(null);
   final listComment = RxList<Comment>([]);
 
   final commentInputController = TextEditingController();
@@ -29,19 +29,20 @@ class PrivateTaskDetailController extends GetxController {
   }
 
   Future<void> fetchData() async {
-    if (task.id == null) {
+    if (task.privateId == null) {
       return;
     }
     await Future.wait([fetchInfo(), fetchCemments()]);
   }
 
   Future<void> fetchInfo() async {
-    final taskRes = await _taskRepository.getDetail(task.id!);
+    final taskRes = await _privateTaskRepository.getDetail(task.privateId!);
     taskDetail.value = taskRes;
   }
 
   Future<void> fetchCemments() async {
-    final comments = await _taskRepository.getListComment(task.id!);
+    final comments =
+        await _privateTaskRepository.getListComment(task.privateId!);
     if (comments != null) {
       listComment.clear();
       listComment.addAll(comments);
@@ -49,14 +50,14 @@ class PrivateTaskDetailController extends GetxController {
   }
 
   void sendComment(String message) {
-    _taskRepository.sendComment(task.id!, message).then((value) {
+    _privateTaskRepository.sendComment(task.id!, message).then((value) {
       fetchCemments();
       commentInputController.text = "";
     });
   }
 
   void changeStatus(TaskStatus status) {
-    _taskRepository.changeStatus(task.id!, status).then((value) {
+    _privateTaskRepository.changeStatus(task.id!, status).then((value) {
       fetchInfo();
       CommonWidget.toastSuccess("Thành công!");
     });
@@ -67,7 +68,9 @@ class PrivateTaskDetailController extends GetxController {
     final image = await picker.pickImage(source: ImageSource.camera);
     if (image != null) {
       //send image
-      _taskRepository.uploadTaskImage(task.id!, image).then((value) {
+      _privateTaskRepository
+          .uploadTaskImage(task.privateId!, image)
+          .then((value) {
         fetchInfo();
         CommonWidget.toastSuccess("Thành công!");
       });

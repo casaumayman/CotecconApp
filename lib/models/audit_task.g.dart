@@ -13,7 +13,7 @@ AuditTask _$AuditTaskFromJson(Map<String, dynamic> json) => AuditTask(
       json['end_time'] as String?,
       json['executor'] == null
           ? null
-          : Executor.fromJson(json['executor'] as Map<String, dynamic>),
+          : User.fromJson(json['executor'] as Map<String, dynamic>),
       (json['executor_images'] as List<dynamic>?)
           ?.map((e) => ImageInfo.fromJson(e as Map<String, dynamic>))
           .toList(),

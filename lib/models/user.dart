@@ -1,10 +1,13 @@
+import 'package:coteccons_app/models/models.dart';
+
 class User {
-  late int id;
+  int? id;
   String? code;
   String? name;
   String? phone;
   String? email;
   String? address;
+  Representer? representer;
 
   User(
       {required this.id,
