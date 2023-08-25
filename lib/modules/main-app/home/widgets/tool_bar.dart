@@ -1,9 +1,10 @@
+import 'package:coteccons_app/modules/main-app/home/home_controller.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/sort_task_dialog.dart';
 import 'package:coteccons_app/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ToolBar extends StatelessWidget {
+class ToolBar extends GetView<HomeController> {
   const ToolBar({super.key});
 
   static const _iconSize = 40.0;
@@ -31,12 +32,16 @@ class ToolBar extends StatelessWidget {
           SizedBox(
             width: _spacing,
           ),
-          Expanded(child: TextInput()),
+          Expanded(
+              child: TextInput(
+            controller: controller.searchController,
+            placeholder: "Tên dự án, công việc, người phụ trách,...",
+          )),
           SizedBox(
             width: _spacing,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: controller.onSearch,
             icon: Icon(
               Icons.search,
               size: _iconSize,

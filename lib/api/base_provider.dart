@@ -9,8 +9,8 @@ class BaseProvider {
 
   BaseProvider() {
     dio.options.baseUrl = ApiConstants.baseUrl;
-    dio.options.connectTimeout = Duration(seconds: 10);
-    dio.options.receiveTimeout = Duration(seconds: 10);
+    dio.options.connectTimeout = Duration(seconds: 15);
+    dio.options.receiveTimeout = Duration(seconds: 15);
     dio.options.responseType = ResponseType.json;
     dio.transformer = BackgroundTransformer()
       ..jsonDecodeCallback = (jsonString) {

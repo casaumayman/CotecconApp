@@ -47,38 +47,47 @@ class TaskDetailController extends GetxController {
   }
 
   void changeStatus(TaskStatus status) {
-    var star = 0;
-    Get.dialog(AlertDialog(
-      title: Text("Đánh giá"),
-      actions: [
-        ElevatedButton(
-            onPressed: () {
-              _taskRepository.changeStatus(taskId, status, star).then((value) {
-                fetchInfo();
-                CommonWidget.toastSuccess("Thành công!");
-              });
-              Get.back();
+    if (status == TaskStatus.ACCEPTED) {
+      var star = 0;
+      Get.dialog(AlertDialog(
+        title: Text("Đánh giá"),
+        actions: [
+          ElevatedButton(
+              onPressed: () {
+                _taskRepository
+                    .changeStatus(taskId, status, star)
+                    .then((value) {
+                  fetchInfo();
+                  CommonWidget.toastSuccess("Thành công!");
+                });
+                Get.back();
+              },
+              child: Text("OK"))
+        ],
+        content: Container(
+          alignment: Alignment.center,
+          height: 40,
+          child: RatingBar.builder(
+            onRatingUpdate: (count) {
+              star = count.toInt();
             },
-            child: Text("OK"))
-      ],
-      content: Container(
-        alignment: Alignment.center,
-        height: 40,
-        child: RatingBar.builder(
-          onRatingUpdate: (count) {
-            star = count.toInt();
-          },
-          allowHalfRating: false,
-          direction: Axis.horizontal,
-          minRating: 1,
-          maxRating: 5,
-          itemBuilder: (context, _) => Icon(
-            Icons.star,
-            color: Colors.amber,
+            allowHalfRating: false,
+            direction: Axis.horizontal,
+            minRating: 1,
+            maxRating: 5,
+            itemBuilder: (context, _) => Icon(
+              Icons.star,
+              color: Colors.amber,
+            ),
           ),
         ),
-      ),
-    ));
+      ));
+      return;
+    }
+    _taskRepository.changeStatus(taskId, status, null).then((value) {
+      fetchInfo();
+      CommonWidget.toastSuccess("Thành công!");
+    });
   }
 
   void openCamera() async {

@@ -13,7 +13,7 @@ class BottomTab extends GetView<HomeController> {
           selectedItemColor: theme.primaryColor,
           currentIndex: controller.currentTabIndex.value,
           onTap: (idx) {
-            controller.currentTabIndex.value = idx;
+            // controller.currentTabIndex.value = idx;
           },
           showUnselectedLabels: true,
           items: [

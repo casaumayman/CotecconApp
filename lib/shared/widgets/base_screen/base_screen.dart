@@ -21,38 +21,43 @@ class BaseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-    return Scaffold(
-      resizeToAvoidBottomInset: resizeToAvoidBottomInset,
-      bottomNavigationBar: bottomNavigationBar,
-      body: Stack(
-        children: [
-          Container(
-            color: hexToColor("#081D4D"),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              appBar ??
-                  BaseAppBar(
-                    title: title,
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        resizeToAvoidBottomInset: resizeToAvoidBottomInset,
+        bottomNavigationBar: bottomNavigationBar,
+        body: Stack(
+          children: [
+            Container(
+              color: hexToColor("#081D4D"),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                appBar ??
+                    BaseAppBar(
+                      title: title,
+                    ),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 255, 255, 255),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20))),
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: child,
+                    ),
                   ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 255, 255, 255),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20))),
-                  child: Padding(
-                    padding: EdgeInsets.all(10),
-                    child: child,
-                  ),
-                ),
-              )
-            ],
-          )
-        ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
