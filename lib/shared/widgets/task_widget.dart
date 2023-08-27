@@ -10,18 +10,10 @@ class TaskWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final backgroundColor = task.status == TaskStatus.IMPLEMENTING
-        ? (task.priorityLevel == TaskPriority.HIGH
-            ? hexToColor("#f8cecc")
-            : hexToColor("##fff2cc"))
-        : hexToColor("#f5f5f5");
-    final textColor = Colors.black;
-    // final textColor = hexToColor("#9095A0");
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
-        color: backgroundColor,
-        // color: Colors.red,
+        color: hexToColor("#F9FBFC"),
         borderRadius: BorderRadius.circular(6),
       ),
       child: InkWell(
@@ -42,14 +34,14 @@ class TaskWidget extends StatelessWidget {
             ),
             Text(
               task.project?.name ?? '',
-              style: TextStyle(color: textColor),
+              style: TextStyle(color: hexToColor("#9095A0")),
             ),
             SizedBox(
               height: 5,
             ),
             Text(
               task.executor?.name ?? '',
-              style: TextStyle(color: textColor),
+              style: TextStyle(color: hexToColor("#9095A0")),
             ),
             SizedBox(
               height: 10,
@@ -63,14 +55,14 @@ class TaskWidget extends StatelessWidget {
                     Icon(
                       Icons.calendar_month_outlined,
                       size: 16,
-                      color: textColor,
+                      color: hexToColor("#9095A0"),
                     ),
                     SizedBox(
                       width: 5,
                     ),
                     Text(
                       "${task.startTime} - ${task.endTime}",
-                      style: TextStyle(color: textColor),
+                      style: TextStyle(color: hexToColor("#9095A0")),
                     )
                   ],
                 ),

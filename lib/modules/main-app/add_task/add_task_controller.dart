@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 class AddTaskController extends GetxController {
   final ProjectRepository _projectRepository = Get.find();
-  final ExecutorRepository _executorRepository = Get.find();
+  final UserRepository _userRepository = Get.find();
   final TaskRepository _taskRepository = Get.find();
   final projects = RxList<Project>();
   final executors = RxList<User>();
@@ -34,7 +34,7 @@ class AddTaskController extends GetxController {
       }
       projects.addAll(value);
     });
-    _executorRepository.getList().then((value) {
+    _userRepository.getListExecutors().then((value) {
       if (value == null) {
         return;
       }

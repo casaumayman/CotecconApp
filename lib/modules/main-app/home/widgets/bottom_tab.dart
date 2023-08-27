@@ -13,30 +13,32 @@ class BottomTab extends GetView<HomeController> {
           selectedItemColor: theme.primaryColor,
           currentIndex: controller.currentTabIndex.value,
           onTap: (idx) {
-            // controller.currentTabIndex.value = idx;
+            controller.currentTabIndex.value = idx;
           },
           showUnselectedLabels: true,
           items: [
             BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.public,
+                  Icons.create,
                 ),
                 label: "Giao việc"),
             BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.account_box,
-                ),
-                label: "Của tôi"),
+                icon: Icon(Icons.get_app), label: "Được giao"),
             BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.task_sharp,
+                  Icons.person,
                 ),
-                label: "Được phân công"),
+                label: "Việc bản thân"),
             BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.checklist,
+                  Icons.safety_check,
                 ),
-                label: "Kiểm soát"),
+                label: "An toàn"),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.notifications,
+                ),
+                label: "Thông báo"),
           ],
         ));
   }

@@ -1,8 +1,8 @@
 import 'package:coteccons_app/modules/main-app/home/home_controller.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/bottom_tab.dart';
+import 'package:coteccons_app/modules/main-app/home/widgets/list_assigned_task/list_assigned_task.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/list_audit_task/list_audit_task.dart';
-import 'package:coteccons_app/modules/main-app/home/widgets/list_my_private_task/list_my_private_task.dart';
-import 'package:coteccons_app/modules/main-app/home/widgets/list_private_task/list_private_task.dart';
+import 'package:coteccons_app/modules/main-app/home/widgets/list_my_task/list_my_task.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/list_task/list_task.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/tool_bar.dart';
 import 'package:coteccons_app/shared/shared.dart';
@@ -34,7 +34,8 @@ class HomeScreen extends GetView<HomeController> {
 
 List<Widget> _widgetMapping = [
   ListTask(),
+  ListAssignedTask(),
   ListMyPrivateTask(),
-  ListPrivateTask(),
   ListAuditTask(),
+  Text("Hehe")
 ];

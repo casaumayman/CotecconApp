@@ -5,3 +5,4 @@ export 'comment.dart';
 export 'image_input.dart';
 export 'images_input.dart';
 export 'info_row.dart';
+export 'task_widget.dart';

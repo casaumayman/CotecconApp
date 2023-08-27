@@ -15,6 +15,18 @@ class TaskRepository {
     return resModel.tasks;
   }
 
+  Future<List<Task>?> getListAssigned() async {
+    final res = await _apiProvider.get('/home/assigned-tasks');
+    final resModel = ListTaskResponse.fromJson(res.data);
+    return resModel.tasks;
+  }
+
+  Future<List<Task>?> getListMyTask() async {
+    final res = await _apiProvider.get('/home/sefl-tasks');
+    final resModel = ListTaskResponse.fromJson(res.data);
+    return resModel.tasks;
+  }
+
   Future<List<Task>?> getImportantList() async {
     final res = await _apiProvider.get('/important-tasks');
     final resModel = ListTaskResponse.fromJson(res.data);

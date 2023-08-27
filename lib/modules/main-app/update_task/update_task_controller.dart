@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 class UpdateTaskController extends GetxController {
   final ProjectRepository _projectRepository = Get.find();
-  final ExecutorRepository _executorRepository = Get.find();
+  final UserRepository _userRepository = Get.find();
   final TaskRepository _taskRepository = Get.find();
   final TaskDetail taskDetail = Get.arguments;
 
@@ -28,7 +28,7 @@ class UpdateTaskController extends GetxController {
   @override
   void onReady() async {
     final serverData = await Future.wait(
-        [_projectRepository.getList(), _executorRepository.getList()]);
+        [_projectRepository.getList(), _userRepository.getListExecutors()]);
     projects.addAll((serverData[0] as List<Project>?) ?? []);
     executors.addAll((serverData[1] as List<User>?) ?? []);
     _initValue();

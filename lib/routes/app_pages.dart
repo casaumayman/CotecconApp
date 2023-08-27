@@ -21,10 +21,6 @@ class AppPages {
         page: () => AddTaskScreen(),
         binding: AddTaskBinding()),
     GetPage(
-        name: Routes.ADD_MY_PRIVATE_TASK,
-        page: () => AddMyTaskScreen(),
-        binding: AddMyTaskBinding()),
-    GetPage(
         name: Routes.ADD_AUDIT,
         page: () => AddAuditTaskScreen(),
         binding: AddAuditTaskBinding()),

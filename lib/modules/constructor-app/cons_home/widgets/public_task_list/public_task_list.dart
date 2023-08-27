@@ -33,7 +33,9 @@ class PublicTaskList extends GetView<PublicTaskListController> {
                             task: task,
                             onTap: () {
                               Get.toNamed(Routes.TASK_DETAIL,
-                                  arguments: task.id);
+                                  arguments: task.id ??
+                                      task.publicId ??
+                                      task.privateId);
                             },
                           ))
                       .toList(),

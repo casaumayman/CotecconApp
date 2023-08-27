@@ -3,7 +3,6 @@ export 'auth/auth.dart';
 export 'main-app/splash/splash.dart';
 export 'main-app/home/home.dart';
 export 'main-app/add_audit_task/add_audit_task.dart';
-export 'main-app/add_my_task/add_my_task.dart';
 export 'main-app/add_task/add_task.dart';
 export 'main-app/audit_detail/audit_detail.dart';
 export 'main-app/task_detail/task_detail.dart';
