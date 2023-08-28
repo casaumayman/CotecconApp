@@ -12,11 +12,12 @@ export 'response/list_user_response.dart';
 export 'response/list_notification_response.dart';
 
 export 'task.dart';
-export 'project.dart';
 export 'task_detail.dart';
+export 'private_task.dart';
+export 'audit_task.dart';
+export 'project.dart';
 export 'image_info.dart';
 export 'comment.dart';
-export 'audit_task.dart';
 export 'user.dart';
 export 'notification.dart';
 export 're_presenter.dart';

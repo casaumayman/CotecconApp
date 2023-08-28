@@ -6,7 +6,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Center(
-      child: Image.asset("assets/images/app_icon.jpeg"),
+      child: Image.asset("assets/images/app_icon.png"),
     );
   }
 }

@@ -29,6 +29,13 @@ AuditTask _$AuditTaskFromJson(Map<String, dynamic> json) => AuditTask(
       json['project_name'] as String?,
       json['start_time'] as String?,
       $enumDecode(_$TaskStatusEnumMap, json['status']),
+      json['acceptor'] == null
+          ? null
+          : User.fromJson(json['acceptor'] as Map<String, dynamic>),
+      json['creator'] == null
+          ? null
+          : User.fromJson(json['creator'] as Map<String, dynamic>),
+      json['star'] as int?,
     );
 
 Map<String, dynamic> _$AuditTaskToJson(AuditTask instance) => <String, dynamic>{
@@ -38,12 +45,15 @@ Map<String, dynamic> _$AuditTaskToJson(AuditTask instance) => <String, dynamic>{
       'project_id': instance.projectId,
       'project_name': instance.projectName,
       'project': instance.project,
+      'creator': instance.creator,
       'executor': instance.executor,
+      'acceptor': instance.acceptor,
       'start_time': instance.startTime,
       'end_time': instance.endTime,
       'description': instance.description,
       'priority_level': _$TaskPriorityEnumMap[instance.priorityLevel],
       'status': _$TaskStatusEnumMap[instance.status]!,
+      'star': instance.star,
       'owner_images': instance.ownerImages,
       'executor_images': instance.executorImages,
     };

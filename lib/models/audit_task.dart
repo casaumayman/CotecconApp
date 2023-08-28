@@ -11,31 +11,36 @@ class AuditTask {
   int? projectId;
   String? projectName;
   Project? project;
+  User? creator;
   User? executor;
+  User? acceptor;
   String? startTime;
   String? endTime;
   String? description;
   TaskPriority? priorityLevel;
   TaskStatus status;
+  int? star;
   List<ImageInfo>? ownerImages;
   List<ImageInfo>? executorImages;
 
   AuditTask(
-    this.id,
-    this.code,
-    this.description,
-    this.endTime,
-    this.executor,
-    this.executorImages,
-    this.name,
-    this.ownerImages,
-    this.priorityLevel,
-    this.project,
-    this.projectId,
-    this.projectName,
-    this.startTime,
-    this.status,
-  );
+      this.id,
+      this.code,
+      this.description,
+      this.endTime,
+      this.executor,
+      this.executorImages,
+      this.name,
+      this.ownerImages,
+      this.priorityLevel,
+      this.project,
+      this.projectId,
+      this.projectName,
+      this.startTime,
+      this.status,
+      this.acceptor,
+      this.creator,
+      this.star);
 
   factory AuditTask.fromJson(Map<String, dynamic> json) =>
       _$AuditTaskFromJson(json);

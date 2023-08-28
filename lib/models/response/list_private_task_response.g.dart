@@ -10,7 +10,7 @@ ListPrivateTaskResponse _$ListPrivateTaskResponseFromJson(
         Map<String, dynamic> json) =>
     ListPrivateTaskResponse(
       tasks: (json['tasks'] as List<dynamic>?)
-              ?.map((e) => TaskDetail.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => PrivateTask.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
     );

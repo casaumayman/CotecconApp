@@ -3,6 +3,7 @@ import 'package:coteccons_app/modules/main-app/home/widgets/bottom_tab.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/list_assigned_task/list_assigned_task.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/list_audit_task/list_audit_task.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/list_my_task/list_my_task.dart';
+import 'package:coteccons_app/modules/main-app/home/widgets/list_notification/notification_list.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/list_task/list_task.dart';
 import 'package:coteccons_app/modules/main-app/home/widgets/tool_bar.dart';
 import 'package:coteccons_app/shared/shared.dart';
@@ -37,5 +38,5 @@ List<Widget> _widgetMapping = [
   ListAssignedTask(),
   ListMyPrivateTask(),
   ListAuditTask(),
-  Text("Hehe")
+  NotificationList()
 ];

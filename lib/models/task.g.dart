@@ -29,6 +29,7 @@ Task _$TaskFromJson(Map<String, dynamic> json) => Task(
       status: $enumDecodeNullable(_$TaskStatusEnumMap, json['status']),
       priorityLevel:
           $enumDecodeNullable(_$TaskPriorityEnumMap, json['priority_level']),
+      star: json['star'] as int?,
       privateId: json['private_id'] as int?,
     )..id = json['id'] as int?;
 
@@ -48,6 +49,7 @@ Map<String, dynamic> _$TaskToJson(Task instance) => <String, dynamic>{
       'private_id': instance.privateId,
       'public_id': instance.publicId,
       'id': instance.id,
+      'star': instance.star,
     };
 
 const _$TaskStatusEnumMap = {

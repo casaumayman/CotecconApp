@@ -45,7 +45,7 @@ class AddtaskDialog extends StatelessWidget {
               if (_value.value == AddTaskType.public) {
                 Get.toNamed(Routes.ADD_TASK);
               } else {
-                Get.toNamed(Routes.ADD_MY_PRIVATE_TASK);
+                Get.toNamed(Routes.ADD_PRIVATE_TASK);
               }
             },
             child: Text("OK")),

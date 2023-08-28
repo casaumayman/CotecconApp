@@ -18,7 +18,7 @@ class ListMyPrivateTask extends GetView<ListMyTaskController> {
                 return ListView(
                   padding: EdgeInsets.zero,
                   children: controller.tasks
-                      .map((task) => TaskWidget(
+                      .map((task) => PrivateTaskWidget(
                             task: task,
                             onTap: () {
                               Get.toNamed(Routes.PRIVATE_TASK_DETAIL,

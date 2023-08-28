@@ -90,7 +90,7 @@ class AppBarTitle extends StatelessWidget {
     }
     return Container(
       alignment: Alignment.centerLeft,
-      child: Image.asset("assets/images/app_icon.jpeg", height: 50),
+      child: Image.asset("assets/images/app_icon.png", height: 50),
     );
   }
 }

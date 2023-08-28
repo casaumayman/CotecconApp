@@ -21,6 +21,10 @@ class AppPages {
         page: () => AddTaskScreen(),
         binding: AddTaskBinding()),
     GetPage(
+        name: Routes.ADD_PRIVATE_TASK,
+        page: () => AddPrivateTaskScreen(),
+        binding: AddPrivateTaskBinding()),
+    GetPage(
         name: Routes.ADD_AUDIT,
         page: () => AddAuditTaskScreen(),
         binding: AddAuditTaskBinding()),
@@ -44,6 +48,10 @@ class AppPages {
       name: Routes.IMAGE_VIEW,
       page: () => ImageViewScreen(),
     ),
+    GetPage(
+        name: Routes.NOTIFICATION_DETAIL,
+        page: () => NotificationDetailScreen(),
+        binding: NotificationDetailBinding()),
   ];
 
   static final consRoutes = [

@@ -20,6 +20,7 @@ class Task {
   int? privateId;
   int? publicId;
   int? id;
+  int? star;
 
   Task(
       {this.code,
@@ -35,6 +36,7 @@ class Task {
       this.publicId,
       this.status,
       this.priorityLevel,
+      this.star,
       this.privateId}) {
     this.id = this.publicId ?? this.privateId;
   }

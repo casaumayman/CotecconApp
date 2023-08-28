@@ -3,9 +3,8 @@ import 'dart:async';
 import 'package:coteccons_app/api/api.dart';
 import 'package:coteccons_app/models/models.dart';
 import 'package:coteccons_app/modules/main-app/home/home_controller.dart';
-import 'package:coteccons_app/modules/main-app/home/widgets/list_task/task_helper.dart';
 import 'package:coteccons_app/routes/routes.dart';
-import 'package:coteccons_app/shared/utils/flavor_util.dart';
+import 'package:coteccons_app/shared/shared.dart';
 import 'package:get/get.dart';
 
 class ListTaskController extends GetxController {
@@ -13,18 +12,12 @@ class ListTaskController extends GetxController {
   final homeController = Get.find<HomeController>();
   final tasks = RxList<Task>();
   List<Task> _originTasks = [];
-  final isCTCApp = false.obs;
   late final StreamSubscription<String>? _listenSearchSubscript;
   late final StreamSubscription<SortTaskType?>? _listenSortSubscript;
 
   @override
   void onReady() {
     fetchData();
-    FlavorUtil.getFlavor().then((flavor) {
-      if (flavor != null) {
-        isCTCApp.value = flavor == Flavor.CTC;
-      }
-    });
     _listenSearchSubscript = homeController.searchText.listen((searchText) {
       _onSearch(searchText);
     });
