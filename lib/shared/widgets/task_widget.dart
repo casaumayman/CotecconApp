@@ -53,7 +53,21 @@ class TaskWidget extends StatelessWidget {
               style: TextStyle(color: textColor),
             ),
             SizedBox(
-              height: 10,
+              height: 5,
+            ),
+            Text(
+              "Ưu tiên: ${TaskPriorityUtils.toStringLabel(task.priorityLevel)}",
+              style: TextStyle(color: textColor),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              "Trạng thái: ${TaskStatusUtils.toStringLabel(task.status)}",
+              style: TextStyle(color: textColor),
+            ),
+            SizedBox(
+              height: 5,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

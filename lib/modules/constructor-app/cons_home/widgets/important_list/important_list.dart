@@ -1,8 +1,8 @@
 import 'package:coteccons_app/modules/constructor-app/cons_home/widgets/important_list/important_list_controller.dart';
 import 'package:coteccons_app/routes/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:coteccons_app/modules/constructor-app/cons_home/widgets/task_widget.dart';
 import 'package:get/get.dart';
+import 'package:coteccons_app/shared/widgets/task_widget.dart';
 
 class ImportantList extends GetView<ImportantListController> {
   const ImportantList({super.key});
